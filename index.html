@@ -1,0 +1,2647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyPartner 10th - Mission 90%+ PSEB Board Master</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#0c4a6e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Smooth custom scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    .dark ::-webkit-scrollbar-thumb { background: #334155; }
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+    }
+    .dark .glassmorphism {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 glassmorphism border-b border-slate-200 dark:border-slate-800 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-sky-500/20 font-heading font-extrabold text-xl">
+          10
+        </div>
+        <div>
+          <span class="font-heading font-bold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">
+            StudyPartner
+          </span>
+          <span class="hidden sm:inline-block text-xs font-semibold px-2 py-0.5 ml-2 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-800">
+            Mission 90%+ Target
+          </span>
+        </div>
+      </div>
+
+      <!-- Quick Stats & Actions in Header -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <!-- Live Routine Slot Pill -->
+        <div id="liveSlotBadge" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800 text-xs font-medium text-sky-800 dark:text-sky-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+          <span id="currentSlotName">Detecting Slot...</span>
+        </div>
+
+        <!-- Board Selector (PSEB / BSEB) -->
+        <div class="flex items-center rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 p-0.5 text-xs font-bold">
+          <button id="boardBtn-pseb" onclick="switchBoard('pseb')" class="px-2.5 py-1 rounded-lg bg-sky-600 text-white shadow-sm transition">PSEB</button>
+          <button id="boardBtn-bseb" onclick="switchBoard('bseb')" class="px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition">BSEB</button>
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <button id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Theme" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition">
+          <i id="themeIcon" class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- Quick Partner WhatsApp Button -->
+        <button onclick="openWhatsAppModal()" class="flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition active:scale-95">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span class="hidden sm:inline">Partner Report</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sub Navigation Tabs -->
+    <div class="bg-white/70 dark:bg-slate-900/70 border-t border-slate-200 dark:border-slate-800 px-4 overflow-x-auto">
+      <nav class="max-w-7xl mx-auto flex space-x-1 sm:space-x-2 py-2 text-sm font-medium">
+        <button onclick="switchTab('dashboard')" id="tabBtn-dashboard" class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-sky-600 bg-sky-50 dark:bg-sky-950/50 dark:text-sky-400 font-semibold">
+          <i class="fa-solid fa-gauge-high"></i> Dashboard
+        </button>
+        <button onclick="switchTab('routine')" id="tabBtn-routine" class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+          <i class="fa-regular fa-clock"></i> 24h Routine & Audit
+        </button>
+        <button onclick="switchTab('schedule')" id="tabBtn-schedule" class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+          <i class="fa-solid fa-calendar-check"></i> Nov-Feb Full Roadmap
+        </button>
+        <button onclick="switchTab('books')" id="tabBtn-books" class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+          <i class="fa-solid fa-book"></i> Board Books & Chapters
+        </button>
+        <button onclick="switchTab('timerHub')" id="tabBtn-timerHub" class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+          <i class="fa-solid fa-stopwatch"></i> Custom Timer & Alarm
+        </button>
+        <button onclick="switchTab('dailyLogger')" id="tabBtn-dailyLogger" class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+          <i class="fa-solid fa-chart-line"></i> Daily Submit & History
+        </button>
+        <button onclick="switchTab('blueprint')" id="tabBtn-blueprint" class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+          <i class="fa-solid fa-compass-drafting"></i> 100-Day Blueprint
+        </button>
+        <button onclick="switchTab('partner')" id="tabBtn-partner" class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+          <i class="fa-solid fa-user-group"></i> Partner Study Hub
+        </button>
+        <button onclick="switchTab('aiMentor')" id="tabBtn-aiMentor" class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+          <i class="fa-solid fa-robot"></i> AI Study Mentor
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- TAB 1: DASHBOARD -->
+    <section id="tab-dashboard" class="space-y-6">
+      <!-- 90% Formula & Countdown Banner -->
+      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-sky-600 via-indigo-600 to-purple-600 p-6 sm:p-8 text-white shadow-xl">
+        <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div class="space-y-2 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold tracking-wide uppercase">
+              <i class="fa-solid fa-bullseye text-amber-300"></i> <span id="dashBoardBadge">PSEB</span> Class 10 • February Board Exams Target
+            </div>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold leading-tight">
+              November se February Boards Tak Ka Complete Master Plan!
+            </h1>
+            <p class="text-sky-100 text-sm sm:text-base leading-relaxed">
+              31 December tak <strong>Phase 1 (Syllabus Completion)</strong> khatam hoga, phir January mein <strong>PYQs & Model Papers</strong> aur February mein <strong>Final Board Revision</strong>!
+            </p>
+            <div class="pt-2 flex flex-wrap gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded-lg bg-white/15 backdrop-blur-md font-medium">80 Marks Theory Paper</span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/15 backdrop-blur-md font-medium">20 Marks School INA</span>
+              <span class="px-2.5 py-1 rounded-lg bg-emerald-400/30 text-emerald-200 border border-emerald-300/40 font-bold">Target: 70+/80 in Board</span>
+            </div>
+          </div>
+          
+          <!-- Board Exam Countdown & Audit Status -->
+          <div class="flex flex-col sm:flex-row lg:flex-col gap-3 w-full lg:w-auto shrink-0">
+            <!-- Exam Countdown Card -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 text-center flex-1 shadow-lg">
+              <span class="text-[11px] uppercase text-sky-200 font-semibold tracking-wider block">February Board Exam Countdown</span>
+              <div class="text-2xl sm:text-3xl font-extrabold font-heading text-white mt-1" id="boardDaysCountdown">
+                -- Days Left
+              </div>
+              <span class="text-[11px] text-emerald-300 font-medium">Target: Mid February 2027</span>
+            </div>
+
+            <!-- Today's Audit Status Card -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 text-center flex-1 shadow-lg">
+              <span class="text-[11px] uppercase text-sky-200 font-semibold tracking-wider block">Today's Routine Audit</span>
+              <div class="text-2xl sm:text-3xl font-extrabold font-heading text-amber-300 mt-1" id="dashAuditPercent">0%</div>
+              <span class="text-[11px] text-sky-100" id="dashAuditCount">0 of 5 Habits Completed</span>
+              <div class="w-full bg-white/20 h-1.5 rounded-full mt-2 overflow-hidden">
+                <div id="dashAuditBar" class="bg-amber-400 h-full w-0 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Background Ambient Glow -->
+        <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl pointer-events-none"></div>
+      </div>
+
+      <!-- NEW SCORE PREDICTOR & SYLLABUS COMPLETION WIDGET -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="p-2 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 text-sm">
+              <i class="fa-solid fa-chart-pie"></i>
+            </span>
+            <div>
+              <h3 class="font-heading font-bold text-slate-900 dark:text-white text-base">Class 10 Board 90%+ Target Score Predictor</h3>
+              <p class="text-xs text-slate-500">Based on your chapter completions + daily habit consistency</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800" id="predictedScoreBadge">
+              Projected: 92.4% (Topper Band)
+            </span>
+          </div>
+        </div>
+
+        <!-- Subject-Wise Progress Micro-Bars -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" id="subjectMicroBarsContainer">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Quick Action Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Card 1: Current Focus -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between text-sky-600 dark:text-sky-400 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider">School Synced Priority</span>
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="font-heading font-bold text-lg text-slate-800 dark:text-slate-100">Maths Ch 8 & 9</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Trigonometry & Heights/Distances frontloaded so you ace school pre-tests!</p>
+        </div>
+
+        <!-- Card 2: Science High Yield -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between text-emerald-600 dark:text-emerald-400 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider">Science Core</span>
+            <i class="fa-solid fa-flask-vial"></i>
+          </div>
+          <div class="font-heading font-bold text-lg text-slate-800 dark:text-slate-100">Metals & Non-metals</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Reactivity series trick + Roasting vs Calcination differences.</p>
+        </div>
+
+        <!-- Card 3: Study Stopwatch -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between text-indigo-600 dark:text-indigo-400 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider">Focus Stopwatch</span>
+            <i class="fa-solid fa-stopwatch"></i>
+          </div>
+          <div id="quickTimerDisplay" class="font-heading font-bold text-2xl text-slate-800 dark:text-slate-100">25:00</div>
+          <div class="flex gap-2 mt-2">
+            <button id="quickTimerStartBtn" onclick="toggleQuickTimer()" class="flex-1 text-xs py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 font-semibold transition">Start</button>
+            <button onclick="switchTab('timerHub')" class="px-2 text-xs py-1.5 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Open Custom Timer">
+              <i class="fa-solid fa-sliders"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4: Meditation & Active Recall Bell -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between text-teal-600 dark:text-teal-400 mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider">5:15 AM Meditation</span>
+            <i class="fa-solid fa-spa"></i>
+          </div>
+          <div class="font-heading font-bold text-lg text-slate-800 dark:text-slate-100">Anulom-Vilom Bell</div>
+          <button onclick="startMeditationBell()" class="mt-2 w-full text-xs py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-lg font-semibold transition flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-bell"></i> 10m Breathing Chime
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Mnemonic & Formula Cheat Card -->
+      <div class="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/20 dark:to-orange-950/20 border border-amber-200 dark:border-amber-900/50 rounded-2xl p-5 shadow-sm">
+        <div class="flex items-center gap-2 mb-3 text-amber-800 dark:text-amber-400">
+          <i class="fa-solid fa-bolt text-lg"></i>
+          <h2 class="font-heading font-bold text-base sm:text-lg">Morning Power Mnemonic & Formula Vault</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+          <div class="bg-white/80 dark:bg-slate-900/80 p-3.5 rounded-xl border border-amber-200/60 dark:border-amber-900/40">
+            <span class="font-bold text-slate-900 dark:text-white block mb-1">🔥 Science Reactivity Series Trick:</span>
+            <p class="text-slate-700 dark:text-slate-300 italic mb-1.5">
+              "Please Stop Calling Me A Careless Zebra Instead Try Learning How Copper Saves Gold"
+            </p>
+            <span class="font-mono text-xs bg-amber-100 dark:bg-amber-900/50 px-2 py-0.5 rounded text-amber-800 dark:text-amber-300 font-semibold block">
+              K > Na > Ca > Mg > Al > Zn > Fe > Sn > Pb > [H] > Cu > Ag > Au
+            </span>
+          </div>
+
+          <div class="bg-white/80 dark:bg-slate-900/80 p-3.5 rounded-xl border border-amber-200/60 dark:border-amber-900/40">
+            <span class="font-bold text-slate-900 dark:text-white block mb-1">📐 Heights & Distances Golden Values:</span>
+            <div class="space-y-1 font-mono text-xs text-slate-700 dark:text-slate-300">
+              <div>tan 30° = <span class="font-bold text-indigo-600 dark:text-indigo-400">1/√3</span> (~0.577)</div>
+              <div>tan 45° = <span class="font-bold text-indigo-600 dark:text-indigo-400">1</span> (Base = Perpendicular)</div>
+              <div>tan 60° = <span class="font-bold text-indigo-600 dark:text-indigo-400">√3</span> (~1.732)</div>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">90% board problems are solved using tan θ!</p>
+          </div>
+
+          <div class="bg-white/80 dark:bg-slate-900/80 p-3.5 rounded-xl border border-amber-200/60 dark:border-amber-900/40">
+            <span class="font-bold text-slate-900 dark:text-white block mb-1">⭐ PSEB Topper Presentation Rule:</span>
+            <ul class="list-disc list-inside text-xs space-y-1 text-slate-700 dark:text-slate-300">
+              <li>Use Blue Ball Pen only.</li>
+              <li>Underline key terms with pencil.</li>
+              <li>Draw neat margins & horizontal rule after every answer.</li>
+              <li>Draw right-angle diagrams using pencil & scale.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: ROUTINE & DAILY AUDIT TRACKER -->
+    <section id="tab-routine" class="hidden space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900 dark:text-white">
+            Daily Master Routine (24-Hour Synced)
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Morning active memory + 7:15 AM departure + high yield evening core slots.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="resetAuditTracker()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            <i class="fa-solid fa-arrows-rotate mr-1"></i> Reset Today's Ticks
+          </button>
+        </div>
+      </div>
+
+      <!-- DAILY 90% SELF-AUDIT TRACKER (Interactive Checklist) -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
+          <div>
+            <h3 class="font-heading font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Daily 90% Self-Audit Tracker (Rozana Tick Karein)
+            </h3>
+            <span class="text-xs text-slate-500">Document Page 1 Requirement: Tick all 5 targets every day</span>
+          </div>
+          <span id="auditScoreBadge" class="text-xs font-bold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+            0 / 5 Completed
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+          <label class="audit-item flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-sky-400 cursor-pointer transition select-none bg-slate-50/50 dark:bg-slate-950/50">
+            <input type="checkbox" id="audit-subah" onchange="toggleAudit('subah')" class="w-5 h-5 mt-0.5 rounded text-sky-600 focus:ring-sky-500">
+            <div class="text-xs">
+              <span class="font-bold text-slate-800 dark:text-slate-200 block mb-0.5">Subah Ka Session</span>
+              <p class="text-slate-500 dark:text-slate-400 leading-snug">10m Meditation + Formulas / Reaction recall</p>
+            </div>
+          </label>
+
+          <label class="audit-item flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-sky-400 cursor-pointer transition select-none bg-slate-50/50 dark:bg-slate-950/50">
+            <input type="checkbox" id="audit-maths" onchange="toggleAudit('maths')" class="w-5 h-5 mt-0.5 rounded text-sky-600 focus:ring-sky-500">
+            <div class="text-xs">
+              <span class="font-bold text-slate-800 dark:text-slate-200 block mb-0.5">Shaam Ka Maths</span>
+              <p class="text-slate-500 dark:text-slate-400 leading-snug">Min 15-20 NCERT haath se solve kiye</p>
+            </div>
+          </label>
+
+          <label class="audit-item flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-sky-400 cursor-pointer transition select-none bg-slate-50/50 dark:bg-slate-950/50">
+            <input type="checkbox" id="audit-science" onchange="toggleAudit('science')" class="w-5 h-5 mt-0.5 rounded text-sky-600 focus:ring-sky-500">
+            <div class="text-xs">
+              <span class="font-bold text-slate-800 dark:text-slate-200 block mb-0.5">Science Slot</span>
+              <p class="text-slate-500 dark:text-slate-400 leading-snug">Concepts + 1 diagram or reaction practice</p>
+            </div>
+          </label>
+
+          <label class="audit-item flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-sky-400 cursor-pointer transition select-none bg-slate-50/50 dark:bg-slate-950/50">
+            <input type="checkbox" id="audit-sst" onchange="toggleAudit('sst')" class="w-5 h-5 mt-0.5 rounded text-sky-600 focus:ring-sky-500">
+            <div class="text-xs">
+              <span class="font-bold text-slate-800 dark:text-slate-200 block mb-0.5">SST / Night Slot</span>
+              <p class="text-slate-500 dark:text-slate-400 leading-snug">4 Points Bullet Answers or Map practice</p>
+            </div>
+          </label>
+
+          <label class="audit-item flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-sky-400 cursor-pointer transition select-none bg-slate-50/50 dark:bg-slate-950/50">
+            <input type="checkbox" id="audit-sleep" onchange="toggleAudit('sleep')" class="w-5 h-5 mt-0.5 rounded text-sky-600 focus:ring-sky-500">
+            <div class="text-xs">
+              <span class="font-bold text-slate-800 dark:text-slate-200 block mb-0.5">10:30 PM Sleep</span>
+              <p class="text-slate-500 dark:text-slate-400 leading-snug">On-Time Bed (No Phone scrolling)</p>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Complete 24-Hour Master Schedule Table -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+          <span class="font-heading font-bold text-slate-900 dark:text-white text-sm sm:text-base">
+            Detailed 24-Hour Timeline with Active Status
+          </span>
+          <span class="text-xs text-slate-500">School Depart: 7:15 AM | Return: 2:00 PM</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-100/70 dark:bg-slate-800/70 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800">
+              <tr>
+                <th class="py-3 px-4 font-semibold">Time Slot</th>
+                <th class="py-3 px-4 font-semibold">Routine & Subject</th>
+                <th class="py-3 px-4 font-semibold">Target Action (90% Focus)</th>
+                <th class="py-3 px-4 font-semibold text-center">Status</th>
+              </tr>
+            </thead>
+            <tbody id="routineTableBody" class="divide-y divide-slate-100 dark:divide-slate-800/60 font-normal">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Pro Routine Advisory Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+        <div class="p-4 rounded-xl bg-sky-50/70 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-900/50 space-y-2">
+          <h4 class="font-heading font-bold text-sky-900 dark:text-sky-300 flex items-center gap-2">
+            <i class="fa-solid fa-sun text-amber-500"></i> Subah Padhte Waqt Kya Karein?
+          </h4>
+          <ul class="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-300">
+            <li><strong>No Heavy Calculations:</strong> Subah naye calculations mat shuru karo; formulas aur tables revise karo.</li>
+            <li><strong>Reactivity Series & Tables:</strong> Chemistry series aur Trigonometry tan 30°, 45°, 60° values dimaag me fix karo.</li>
+            <li><strong>Previous Day Recall:</strong> Jo picchli shaam ko padha tha, use 15 min bina dekhe rough copy par likho.</li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-xl bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-900/50 space-y-2">
+          <h4 class="font-heading font-bold text-indigo-900 dark:text-indigo-300 flex items-center gap-2">
+            <i class="fa-solid fa-school text-indigo-500"></i> School & Buffer Time Management
+          </h4>
+          <ul class="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-300">
+            <li><strong>7:15 AM Sharp Departure:</strong> Kapde, tie, socks aur bag raat ko 10:15 PM par hi ready rakhein.</li>
+            <li><strong>Zero School Backlog:</strong> School period me teacher ke notes ko final mano, shaam ko sirf practice bachegi.</li>
+            <li><strong>Afternoon Nap:</strong> 2:30 se 3:15 PM ki 45 min ki neend shaam ke 5 ghante padhai ki energy 2x kar deti hai.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: NOVEMBER TO FEBRUARY EXTENDED ROADMAP -->
+    <section id="tab-schedule" class="hidden space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900 dark:text-white">
+            Complete November to February Board Roadmap
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Kyu tha 31 December tak? Kyunki 31 December tak <strong>Phase 1 (Syllabus Sprint)</strong> complete karna hota hai, taaki January aur February board papers ke revision aur mock tests ke liye bachein!
+          </p>
+        </div>
+      </div>
+
+      <!-- Phase Selector Tabs -->
+      <div class="flex flex-wrap gap-2 p-1.5 bg-slate-200/60 dark:bg-slate-800/60 rounded-xl">
+        <button onclick="switchPhase('phase1')" id="phaseBtn-phase1" class="phase-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold bg-white dark:bg-slate-900 text-sky-600 shadow-sm transition">
+          Phase 1: Syllabus Sprint (Nov 1 - Dec 31)
+        </button>
+        <button onclick="switchPhase('phase2')" id="phaseBtn-phase2" class="phase-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 transition">
+          Phase 2: PYQ & Model Papers (Jan 1 - Jan 20)
+        </button>
+        <button onclick="switchPhase('phase3')" id="phaseBtn-phase3" class="phase-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 transition">
+          Phase 3: Pre-Boards & Final Exam (Jan 21 - Feb)
+        </button>
+      </div>
+
+      <!-- Phase 1 Content (9-Week Detailed Grid) -->
+      <div id="phaseContent-phase1" class="space-y-4">
+        <div class="p-4 rounded-xl bg-sky-50 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-900 flex items-center justify-between text-xs sm:text-sm">
+          <div>
+            <span class="font-bold text-sky-900 dark:text-sky-300">Phase 1 Target:</span> 
+            School-Synced 9-Week Syllabus Completion (Heights & Distances + Metals & Non-Metals First).
+          </div>
+          <span id="weeksCompletedCount" class="font-bold text-sky-700 dark:text-sky-400 whitespace-nowrap">0 / 9 Weeks Done</span>
+        </div>
+        <div id="weeksScheduleContainer" class="space-y-4">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+
+      <!-- Phase 2 Content (January PYQ & Model Papers) -->
+      <div id="phaseContent-phase2" class="hidden space-y-4">
+        <div class="p-4 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-900 text-xs sm:text-sm">
+          <span class="font-bold text-indigo-900 dark:text-indigo-300">January Mission:</span> 
+          PSEB ke last 5 saal ke question papers aur official Model Test Papers (MTP) ko solve karna. Speed aur handwriting polish karna.
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">Jan 1 - Jan 7</span>
+            <h4 class="font-heading font-bold text-slate-900 dark:text-white">Week 10: PYQ Analysis (2020-2022)</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Maths BPT theorem, Circle proofs, Science electricity numericals aur human eye ray diagrams ki repeated list banao.</p>
+            <div class="text-xs text-indigo-600 dark:text-indigo-400 font-semibold">Sunday: 3-Hour Full Maths Paper</div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">Jan 8 - Jan 14</span>
+            <h4 class="font-heading font-bold text-slate-900 dark:text-white">Week 11: Recent PYQs (2023-2025)</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400">SST Map practice (Punjab rivers & Indian minerals) + Punjabi Paper A & B grammar (muhavare, vachan, patar).</p>
+            <div class="text-xs text-indigo-600 dark:text-indigo-400 font-semibold">Sunday: 3-Hour Full Science Paper</div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">Jan 15 - Jan 20</span>
+            <h4 class="font-heading font-bold text-slate-900 dark:text-white">Week 12: PSEB Official Model Papers</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Solve official board sample papers on PSEB answer sheet format. Blue ball pen, pencil margins check.</p>
+            <div class="text-xs text-indigo-600 dark:text-indigo-400 font-semibold">Sunday: SST & English Model Paper</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3 Content (February Pre-Boards & Final Exam) -->
+      <div id="phaseContent-phase3" class="hidden space-y-4">
+        <div class="p-4 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-900 text-xs sm:text-sm">
+          <span class="font-bold text-purple-900 dark:text-purple-300">Final Sprint (Late Jan - Mid Feb):</span> 
+          Pre-board mistakes correction, short notes active recall subah 5:25 AM, and timed 3-hour exam simulation.
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2">
+            <h4 class="font-heading font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="fa-solid fa-stopwatch-20 text-purple-600"></i> Exam Hall Simulation Rule
+            </h4>
+            <ul class="text-xs sm:text-sm space-y-1.5 text-slate-600 dark:text-slate-300 list-disc list-inside">
+              <li>Morning 9:00 AM to 12:15 PM roz ek full 80-mark mock paper solve karo bina uthe.</li>
+              <li>First 15 minutes question paper reading time simulate karo (choose best questions in internal choices).</li>
+              <li>Keep water bottle and no gadgets near desk.</li>
+            </ul>
+          </div>
+
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2">
+            <h4 class="font-heading font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="fa-solid fa-medal text-amber-500"></i> Board Answer Sheet Presentation Checklist
+            </h4>
+            <ul class="text-xs sm:text-sm space-y-1.5 text-slate-600 dark:text-slate-300 list-disc list-inside">
+              <li>Both sides scale se straight line margins draw karein.</li>
+              <li>Har question ke baad 2 lines chhod kar horizontal divider banayein.</li>
+              <li>Maths step-by-step likhein, formulas ko box me band karein.</li>
+              <li>Science & SST diagrams ko pencil aur scale se label karein.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: PSEB OFFICIAL BOOKS & CHAPTER DIRECTORY -->
+    <section id="tab-books" class="hidden space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900 dark:text-white">
+            <span id="booksHeaderBoardName">PSEB</span> Class 10 Official Books & Interactive Chapter Tracker
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Har chapter ko padhne ke baad tick lagao taaki progress save rahe (Science, Maths, SST Part 1 & 2, Punjabi, Hindi & English).
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="chapterProgressBadge" class="text-xs px-3 py-1.5 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 font-semibold">
+            0 Chapters Done
+          </span>
+        </div>
+      </div>
+
+      <!-- Subject Books Accordions / Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="subjectCardsContainer">
+        <!-- Rendered dynamically by renderSubjectBooks() based on PSEB / BSEB -->
+      </div>
+    </section>
+
+    <!-- NEW TAB: CUSTOM FOCUS TIMER & WORKING ALARM SETTING -->
+    <section id="tab-timerHub" class="hidden space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900 dark:text-white">
+            Custom Study Timer & Routine Alarms
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Jitne minute ya ghante ka man kare timer lagao, real-time audio sound ke saath aur slot ke routine alarms set karo.
+          </p>
+        </div>
+        <button onclick="testAlarmSound()" class="text-xs px-3 py-1.5 rounded-xl border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-semibold">
+          <i class="fa-solid fa-volume-high mr-1"></i> Test Alarm Beep
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Card 1: Custom Duration Countdown Timer -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-5">
+          <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+            <h3 class="font-heading font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <i class="fa-solid fa-hourglass-half text-sky-600"></i> Custom Duration Timer
+            </h3>
+            <span id="customTimerStatusTag" class="text-xs px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-semibold">Idle</span>
+          </div>
+
+          <!-- Big Display -->
+          <div class="text-center py-4 bg-slate-50 dark:bg-slate-950/70 rounded-2xl border border-slate-200 dark:border-slate-800">
+            <div id="customTimerBigDisplay" class="font-heading font-extrabold text-5xl sm:text-6xl tracking-tight text-slate-900 dark:text-white font-mono">
+              45:00
+            </div>
+            <p id="customTimerSubtext" class="text-xs text-slate-500 mt-2 font-medium">Ready for your deep work session</p>
+          </div>
+
+          <!-- Duration Presets & Custom Input -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-400">
+              <span>Quick Presets:</span>
+              <button onclick="setCustomPreset(15)" class="px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-sky-50 dark:hover:bg-slate-800">15m</button>
+              <button onclick="setCustomPreset(25)" class="px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-sky-50 dark:hover:bg-slate-800">25m</button>
+              <button onclick="setCustomPreset(45)" class="px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-sky-50 dark:hover:bg-slate-800">45m</button>
+              <button onclick="setCustomPreset(60)" class="px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-sky-50 dark:hover:bg-slate-800">60m</button>
+              <button onclick="setCustomPreset(120)" class="px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-sky-50 dark:hover:bg-slate-800">2h Core</button>
+            </div>
+
+            <!-- Custom Hours & Minutes Input -->
+            <div class="grid grid-cols-2 gap-3 pt-1">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Hours</label>
+                <input type="number" id="customInputHours" min="0" max="12" value="0" class="w-full text-center py-2 px-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 font-bold text-sm">
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Minutes</label>
+                <input type="number" id="customInputMins" min="1" max="59" value="45" class="w-full text-center py-2 px-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 font-bold text-sm">
+              </div>
+            </div>
+            <button onclick="applyCustomDurationInput()" class="w-full text-xs py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-bold transition">
+              Apply Custom Time
+            </button>
+          </div>
+
+          <!-- Controls -->
+          <div class="flex gap-3 pt-2">
+            <button id="customTimerMainBtn" onclick="toggleCustomTimer()" class="flex-1 py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-play"></i> Start Timer
+            </button>
+            <button onclick="resetCustomTimer()" class="px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-sm transition">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Daily Routine Alarms (Working Alarm Clock) -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+              <h3 class="font-heading font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <i class="fa-solid fa-bell text-amber-500"></i> Working Routine Alarms
+              </h3>
+              <span class="text-xs text-emerald-600 font-semibold flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Clock Active
+              </span>
+            </div>
+
+            <p class="text-xs text-slate-500 dark:text-slate-400 my-3">
+              Jab time hoga, system loud study alarm bajayega taaki routine break na ho. Neeche toggle on rakhein:
+            </p>
+
+            <!-- Pre-configured Alarms List -->
+            <div class="space-y-2.5 max-h-64 overflow-y-auto pr-1" id="alarmsListContainer">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Add New Custom Alarm -->
+          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 space-y-2">
+            <span class="text-xs font-bold text-slate-800 dark:text-slate-200 block">Naya Custom Alarm Lagayein:</span>
+            <div class="flex gap-2">
+              <input type="time" id="newAlarmTime" class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-bold">
+              <input type="text" id="newAlarmLabel" placeholder="e.g. Maths Trigonometry formulas..." class="flex-1 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs">
+              <button onclick="addCustomAlarm()" class="px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-white rounded-lg text-xs font-bold transition">
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW TAB: DAILY STUDY SUBMISSION & HISTORY TRACKER -->
+    <section id="tab-dailyLogger" class="hidden space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900 dark:text-white">
+            Daily Study Logger & History Tracker
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Roj apna daily data submit karo aur dekho kitna continuity bana hua hai.
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="px-3 py-1.5 rounded-xl bg-amber-50 dark:bg-amber-950/50 border border-amber-300 dark:border-amber-800 text-amber-800 dark:text-amber-300 text-xs font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-fire text-amber-500 text-sm"></i>
+            <span id="streakDisplay">0 Day Streak</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Today's Study Log Form -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+          <h3 class="font-heading font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-pen-to-square text-sky-600"></i> Aaj Ka Daily Report Submit Karein
+          </h3>
+          <span class="text-xs text-slate-500" id="currentDateIndicator">Today</span>
+        </div>
+
+        <form id="dailySubmitForm" onsubmit="handleDailySubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                <i class="fa-regular fa-clock text-sky-500 mr-1"></i> Self-Study Hours (Excluding school)
+              </label>
+              <input type="number" id="logStudyHours" step="0.5" min="0" max="16" placeholder="e.g. 5.5" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-xs sm:text-sm font-semibold">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                <i class="fa-solid fa-pencil text-emerald-500 mr-1"></i> NCERT Questions Solved Haath Se
+              </label>
+              <input type="number" id="logQuestionsCount" min="0" max="100" placeholder="e.g. 20" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-xs sm:text-sm font-semibold">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                <i class="fa-solid fa-book-bookmark text-indigo-500 mr-1"></i> Primary Subject Studied
+              </label>
+              <select id="logPrimarySubject" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-xs sm:text-sm font-semibold">
+                <option value="Maths & Science">Maths & Science</option>
+                <option value="Maths Ch 9 Heights & Distances">Maths Ch 9 Heights & Distances</option>
+                <option value="Science Ch 3 Metals & Non-metals">Science Ch 3 Metals & Non-metals</option>
+                <option value="SST (History/Civics/Eco/Geo)">SST (History/Civics/Eco/Geo)</option>
+                <option value="Languages (Punjabi/English/Hindi)">Languages (Punjabi/English/Hindi)</option>
+                <option value="Full Mock / Sample Paper">Full Mock / Sample Paper</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+              Chapters & Targets Covered Aaj (Haath se likhi summary):
+            </label>
+            <textarea id="logNotes" rows="2" placeholder="e.g. Maths Ex 9.1 questions 1 to 10 solved rough copy pe + Science Reactivity series table done + SST Punjab physical features short notes..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-xs sm:text-sm"></textarea>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <span class="text-xs text-slate-500">Submission will automatically update your streak and timeline!</span>
+            <button type="submit" class="px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs sm:text-sm transition flex items-center gap-1.5 shadow-sm">
+              <i class="fa-solid fa-check"></i> Submit Today's Log
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Past History Timeline Cards -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="font-heading font-bold text-slate-900 dark:text-white text-base sm:text-lg flex items-center gap-2">
+            <i class="fa-solid fa-clock-rotate-left text-purple-600"></i> Past Daily Logs History
+          </h3>
+          <button onclick="clearStudyHistory()" class="text-[11px] text-slate-400 hover:text-rose-500 transition">
+            Clear History
+          </button>
+        </div>
+
+        <div id="studyLogsHistoryContainer" class="space-y-3">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: 100-DAY STRATEGIC BLUEPRINT -->
+    <section id="tab-blueprint" class="hidden space-y-6">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900 dark:text-white">
+          Mission 90% Blueprint: Phase 1 to Phase 3 Roadmap
+        </h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400">
+          Actionable strategy for you and your study partner to score 90%+ aggregate.
+        </p>
+      </div>
+
+      <!-- 90% Formula Card -->
+      <div class="bg-gradient-to-r from-emerald-500/10 via-sky-500/10 to-indigo-500/10 border border-emerald-300 dark:border-emerald-800 rounded-2xl p-5 shadow-sm">
+        <div class="flex items-center gap-2 mb-2 text-emerald-800 dark:text-emerald-300 font-heading font-bold text-lg">
+          <i class="fa-solid fa-calculator"></i> The 90% Formula
+        </div>
+        <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <strong>80 Marks Theory Paper + 20 Marks School INA (Internal Assessment).</strong> Agar School se 19-20 Marks pakke hain, toh Board Paper mein sirf <strong>70/80</strong> laana hai! Bilkul aasan aur achievable target hai.
+        </p>
+      </div>
+
+      <!-- Roadmap Phases -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300">Phase 1</span>
+            <span class="text-xs font-semibold text-slate-500">45 Days</span>
+          </div>
+          <h3 class="font-heading font-bold text-slate-900 dark:text-white text-base">Core Syllabus Sprint (Nov 1 - Dec 15)</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            High-weightage aur foundation chapters ko 100% complete karna hai. Roz 5 ghante pure concentration ke sath lagao. Har chapter ke baad textbook back exercises zaroor karo.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300">Phase 2</span>
+            <span class="text-xs font-semibold text-slate-500">30 Days</span>
+          </div>
+          <h3 class="font-heading font-bold text-slate-900 dark:text-white text-base">PYQs & Model Papers (Dec 16 - Jan 15)</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Board ke pichhle 5 saal ke question papers aur official Model Test Papers solve karo. Bar-bar repeat hone wale questions ko note karo aur unhe master karo.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">Phase 3</span>
+            <span class="text-xs font-semibold text-slate-500">25 Days</span>
+          </div>
+          <h3 class="font-heading font-bold text-slate-900 dark:text-white text-base">Full Mock Tests & Writing (Jan 16 - Boards)</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Roz ek full paper 3 ghante ka timer laga kar likho. Speed, handwriting aur presentation improve karo. Mistakes ko analyse karke revise karo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Subject Wise Scoring Strategies -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2">
+          <h4 class="font-heading font-bold text-sky-600 dark:text-sky-400 flex items-center gap-2">
+            <i class="fa-solid fa-square-root-variable"></i> Mathematics (Target: 75+/80)
+          </h4>
+          <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+            <li><strong>High Weightage:</strong> Real Numbers, Polynomials, Linear & Quadratic Equations, Coordinate Geometry, Triangles, Stats & Probability.</li>
+            <li><strong>Theorems:</strong> Thales Theorem (BPT) aur Circle theorems ko 5-5 baar likh kar pakka karo (fixed 6 marks).</li>
+            <li><strong>Golden Rule:</strong> Maths padhi nahi jaati, rough copy par ghis kar solve ki jaati hai!</li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2">
+          <h4 class="font-heading font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+            <i class="fa-solid fa-atom"></i> Science (Target: 72+/80)
+          </h4>
+          <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+            <li><strong>Diagrams:</strong> Human Eye, Ray Diagrams (Mirrors & Lenses), Digestive System, Heart/Kidney Diagrams.</li>
+            <li><strong>Reactions:</strong> Chemical equations balance karna aur reactivity series yaad rakhna mandatory hai.</li>
+            <li><strong>Numericals:</strong> Light (Mirror/Lens formula) aur Electricity (Ohm's Law, Series-Parallel) roz 2 solve karo.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2">
+          <h4 class="font-heading font-bold text-amber-600 dark:text-amber-400 flex items-center gap-2">
+            <i class="fa-solid fa-earth-americas"></i> Social Studies (SST) (Target: 75+/80)
+          </h4>
+          <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+            <li><strong>Map Work:</strong> 100% full marks milte hain! Rivers, Dams, Mineral belts, Punjab borders roz 5 min practice karo.</li>
+            <li><strong>Headings Trick:</strong> Long answers ko paragraph me mat likho. Dark headings aur 4-5 bullet points bana kar likho.</li>
+            <li><strong>Civics & History:</strong> Direct dates aur events ki ek one-page timeline bana lo.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-2">
+          <h4 class="font-heading font-bold text-purple-600 dark:text-purple-400 flex items-center gap-2">
+            <i class="fa-solid fa-language"></i> Languages (Punjabi, English, Hindi)
+          </h4>
+          <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+            <li><strong>Game Changer:</strong> Ye teeno subjects tumhara total percentage 90% tak kheenchengi!</li>
+            <li><strong>Grammar:</strong> Muhavare, Ling/Vachan, Tense me zero marks kat te hain agar sahi ho.</li>
+            <li><strong>Writing Formats:</strong> Letter, Application, Paragraph writing ka exact board format follow karo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: PARTNER STUDY HUB -->
+    <section id="tab-partner" class="hidden space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900 dark:text-white">
+            Partner Study Hub ("Dono Saath Mein Phodenge")
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Accountability rules and daily target tracking for you and your study partner.
+          </p>
+        </div>
+        <button onclick="openWhatsAppModal()" class="flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">
+          <i class="fa-brands fa-whatsapp text-base"></i> Send 10:00 PM Report
+        </button>
+      </div>
+
+      <!-- Partner Rules Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- DO'S -->
+        <div class="bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-950 rounded-2xl p-5 space-y-3 shadow-sm">
+          <h3 class="font-heading font-bold text-emerald-700 dark:text-emerald-400 flex items-center gap-2 text-base">
+            <i class="fa-solid fa-circle-check"></i> DO'S (Jeet Ki Aadat)
+          </h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>Roz raat ko 10 baje ek dusre ko WhatsApp ya call par sirf 5 minute me report do: "Aaj mera ye target pura hua."</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>Ek dusre se oral questions poocho (Science terms, Maths formula, Punjabi/Hindi muhavare).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>Healthy competition rakho: Sunday ke sample paper me kiske zyada marks aate hain.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>School ke teachers se achhi bonding rakho taaki INA me full 20/20 marks milein.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- DONT'S -->
+        <div class="bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-950 rounded-2xl p-5 space-y-3 shadow-sm">
+          <h3 class="font-heading font-bold text-rose-700 dark:text-rose-400 flex items-center gap-2 text-base">
+            <i class="fa-solid fa-circle-xmark"></i> DONT'S (Time Waste Alerts)
+          </h3>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 font-bold">✗</span>
+              <span>YouTube par 4-4 ghante ke marathon lectures dekh kar time pass mat karna. Self-study se hi dimaag khulta hai.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 font-bold">✗</span>
+              <span>Study session ke dauran phone me Instagram Reels ya gaming strictly band.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 font-bold">✗</span>
+              <span>"Kal se pakka padhunga" wali bimari ko bilkul khatam karo - aaj ka target aaj hi niptao.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-500 font-bold">✗</span>
+              <span>Exam ke paper me answers messy mat likhna; neat writing aur margins bana kar likhna.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Partner Shared Notes Box -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-sm">
+        <div class="flex items-center justify-between">
+          <h3 class="font-heading font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-regular fa-note-sticky text-amber-500"></i> Partner Daily Targets & Notes Box
+          </h3>
+          <button onclick="savePartnerNotes()" class="text-xs px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-700 text-white font-semibold transition">
+            Save Notes
+          </button>
+        </div>
+        <textarea id="partnerNotesArea" rows="4" placeholder="Aaj dono ne kya discuss kiya? Kal ka priority chapter kaunsa hai? (e.g. Maths Ch 9 Heights and Distances Ex 9.1 questions 1 to 8 + Science reactivity series oral test)..." class="w-full text-xs sm:text-sm p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-800 dark:text-slate-200"></textarea>
+      </div>
+    </section>
+
+    <!-- TAB 7: AI STUDY MENTOR -->
+    <section id="tab-aiMentor" class="hidden space-y-4">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+          <i class="fa-solid fa-robot text-sky-600"></i> Class 10 AI Study Mentor
+        </h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400">
+          Maths steps, Science reactions, SST points, ya PSEB/BSEB board presentation doubts pucho.
+        </p>
+      </div>
+
+      <!-- Suggested Quick Prompts -->
+      <div class="flex flex-wrap gap-2 text-xs">
+        <button onclick="sendQuickPrompt('Maths Ch 9 Heights & Distances me tan values ka quick cheat sheet samjha do')" class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-sky-50 hover:text-sky-600 transition">
+          📐 Heights & Distances Values
+        </button>
+        <button onclick="sendQuickPrompt('Science Ch 3 Roasting vs Calcination ka difference 4 points me bata do')" class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-sky-50 hover:text-sky-600 transition">
+          🔥 Roasting vs Calcination
+        </button>
+        <button onclick="sendQuickPrompt('Reactivity series yaad karne ka trick batao')" class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-sky-50 hover:text-sky-600 transition">
+          ⚡ Reactivity Series Trick
+        </button>
+        <button onclick="sendQuickPrompt('SST Economics Part 1 ke important definitions 4-4 points me de do')" class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-sky-50 hover:text-sky-600 transition">
+          🌍 SST Economics Points
+        </button>
+      </div>
+
+      <!-- Chat History Container -->
+      <div id="aiChatHistory" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 h-[420px] overflow-y-auto space-y-4 shadow-inner">
+        <div class="flex gap-3 justify-start">
+          <div class="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center shrink-0 text-xs font-bold">
+            AI
+          </div>
+          <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl p-3.5 max-w-xl text-slate-800 dark:text-slate-200 space-y-1 shadow-sm text-xs sm:text-sm">
+            <span class="font-bold block text-sky-600 dark:text-sky-400">StudyPartner AI Mentor</span>
+            <p>Sat Sri Akal / Namaste dost! Main tumhara Class 10 board exam study partner hoon. November se February tak roz 90%+ target ke liye Maths, Science, SST ya Languages ka koi bhi question ya routine doubt pucho!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input Form -->
+      <form id="aiChatForm" onsubmit="handleAIChatSubmit(event)" class="flex gap-2">
+        <input type="text" id="aiUserInput" placeholder="Apna Class 10 doubt yahan likho (e.g. BPT theorem proof ke main steps kya hain?)..." class="flex-1 px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+        <button type="submit" id="aiSendBtn" class="px-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs sm:text-sm flex items-center gap-1.5 transition active:scale-95 shrink-0">
+          <span>Ask</span> <i class="fa-solid fa-paper-plane text-xs"></i>
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- WHATSAPP REPORT MODAL -->
+  <div id="whatsAppModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-2xl animate-fade-in">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
+        <div class="flex items-center gap-2 text-emerald-600">
+          <i class="fa-brands fa-whatsapp text-xl"></i>
+          <h3 class="font-heading font-bold text-slate-900 dark:text-white text-base sm:text-lg">10:00 PM Daily Partner Report</h3>
+        </div>
+        <button onclick="closeWhatsAppModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-slate-500 dark:text-slate-400">
+        Roz raat 10 baje apne dost ko ye report bhejo taaki dono ka daily target synced rahe aur accountability bani rahe:
+      </p>
+
+      <textarea id="whatsAppTextPreview" rows="8" class="w-full text-xs font-mono p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 focus:outline-none"></textarea>
+
+      <div id="copySuccessMsg" class="hidden text-xs text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
+        <i class="fa-solid fa-check"></i> Report copied to clipboard!
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-2 pt-2">
+        <button onclick="copyPartnerReport()" class="flex-1 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-bold transition">
+          <i class="fa-regular fa-copy mr-1"></i> Copy Report
+        </button>
+        <button onclick="sendToWhatsAppWeb()" class="flex-1 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition shadow-sm">
+          <i class="fa-brands fa-whatsapp mr-1"></i> Open WhatsApp Web
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // --- 24-HOUR MASTER SCHEDULE DATASET ---
+    const routineSlots = [
+      { start: "05:00", end: "05:15", time: "5:00 AM - 5:15 AM", subject: "Wake Up & Cold Wash", target: "Thande paani se chehra dhona + 1 glass paani (Neend door karne ke liye)" },
+      { start: "05:15", end: "05:25", time: "5:15 AM - 5:25 AM", subject: "Meditation & Breathing", target: "10 min Anulom-Vilom / Deep breathing (Stress zero + sharp concentration)" },
+      { start: "05:25", end: "06:35", time: "5:25 AM - 6:35 AM", subject: "Morning Power Study (70m)", target: "Formulas, Trigonometry values, Science reactions & SST definitions" },
+      { start: "06:35", end: "07:15", time: "6:35 AM - 7:15 AM", subject: "Ready, Bath & Breakfast (40m)", target: "Nahana, uniform pehanna, bag check aur light energetic breakfast" },
+      { start: "07:15", end: "14:00", time: "7:15 AM - 2:00 PM", subject: "School Hours (Depart at 7:15)", target: "100% board attention (Maths Ch 9 / Science Ch 3 concepts wahi clear karein)" },
+      { start: "14:00", end: "15:30", time: "2:00 PM - 3:30 PM", subject: "Ghar Wapsi, Lunch & Nap", target: "Refresh hona, lunch karna aur 30-40 min relax/nap (Dimaag recharge)" },
+      { start: "15:30", end: "16:00", time: "3:30 PM - 4:00 PM", subject: "School Homework & Diary", target: "School task aur notebook work complete karein taaki sham bilkul free rahe" },
+      { start: "16:00", end: "18:00", time: "4:00 PM - 6:00 PM", subject: "Maths Core Slot (2 Hours)", target: "NCERT exercises, Heights & Distances, theorems, rough copy problem solving" },
+      { start: "18:00", end: "18:30", time: "6:00 PM - 6:30 PM", subject: "Evening Break & Refreshment", target: "Chai, snacks, bahar thodi fresh hawa (No screen/mobile scrolling)" },
+      { start: "18:30", end: "20:15", time: "6:30 PM - 8:15 PM", subject: "Science Core Slot (1h 45m)", target: "Metals & Non-metals, extraction differences, diagrams aur NCERT in-text" },
+      { start: "20:15", end: "21:00", time: "8:15 PM - 9:00 PM", subject: "Dinner & Family Time", target: "Raat ka khana, relaxing time (Padhai se 45 minute ka poora cut-off)" },
+      { start: "21:00", end: "22:15", time: "9:00 PM - 10:15 PM", subject: "SST & Languages (1h 15m)", target: "Economics basic concepts, History points, Map practice & Punjabi/Hindi/English" },
+      { start: "22:15", end: "22:30", time: "10:15 PM - 10:30 PM", subject: "Desk Clean & Next Day Bag", target: "Books arrange karein, agle din ka target note karein, bag ready" },
+      { start: "22:30", end: "05:00", time: "10:30 PM - 5:00 AM", subject: "Deep Sleep (6.5 Hours)", target: "Poori continuous neend (Long-term memory retention ke liye zaroori)" }
+    ];
+
+    // --- 9-WEEK DETAILED SYLLABUS DATASET ---
+    const nineWeekSyllabus = [
+      {
+        week: "Week 1",
+        dates: "Nov 1 - Nov 7",
+        badge: "School Sync Active",
+        maths: "Maths Ch 8 & Ch 9: Introduction to Trigonometry & Applications (Heights & Distances)",
+        science: "Sci Ch 3: Metals and Non-Metals (Reactivity Series, Extraction & Corrosion)",
+        sst: "Part-I Eco Ch 1: Basic Concepts | Part-II Hist Ch 1: Physical Features of Punjab",
+        test: "Maths Ch 9 Word Problems + Sci Ch 3 (30 Marks)",
+        tip: "Focus on tan 30°, 45°, 60° and reactivity series mnemonic.",
+        days: [
+          { day: "Monday (Nov 1)", maths: "Ch 8: Trig Ratios & Formulas recall", sci: "Ch 3: Physical properties of Metals/Non-metals", sst: "Eco Ch 1: Per Capita Income & National Income definitions" },
+          { day: "Tuesday (Nov 2)", maths: "Ch 8: Trigonometry Table Values (tan 30°, 45°, 60°)", sci: "Ch 3: Chemical properties + Reactions with Oxygen & Water", sst: "Hist Ch 1: Physical features of Punjab (5 Doabs introduction)" },
+          { day: "Wednesday (Nov 3)", maths: "Ch 9: Heights & Distances concept (Angle of Elevation)", sci: "Ch 3: Reactivity Series Mnemonic learning & questions", sst: "Eco Ch 1: Primary, Secondary, Tertiary sector differences" },
+          { day: "Thursday (Nov 4)", maths: "Ch 9: Angle of Depression + NCERT Ex 9.1 (Q1 to Q6)", sci: "Ch 3: Formation & properties of Ionic Compounds", sst: "Hist Ch 1: Impact of Himalayas & Rivers on Punjab History" },
+          { day: "Friday (Nov 5)", maths: "Ch 9: NCERT Ex 9.1 double triangle word problems (Q7 to Q12)", sci: "Ch 3: Extraction of Metals (Roasting vs Calcination)", sst: "Eco Ch 1: 4-mark short questions writing practice" },
+          { day: "Saturday (Nov 6)", maths: "Ch 9: Tough board questions (Lighthouse & Balloon problems)", sci: "Ch 3: Corrosion prevention (Galvanisation, Alloying)", sst: "Hist Ch 1: Map pointing of Punjab rivers and Doabs" },
+          { day: "Sunday (Nov 7)", maths: "Maths Ch 9 Word Problems 1-Hour Test", sci: "Science Ch 3 Comprehensive Test (30 Marks)", sst: "Weekly recap & error notebook audit" }
+        ]
+      },
+      {
+        week: "Week 2",
+        dates: "Nov 8 - Nov 14",
+        badge: "School Sync Active",
+        maths: "Maths Ch 9 Practice: Angles of Elevation/Depression + Ch 4: Quadratic Equations",
+        science: "Sci Ch 2: Acids, Bases and Salts (pH scale, Salts & reactions)",
+        sst: "Part-I Eco Ch 2: Infrastructure of Indian Economy | Part-I Geo Ch 1: India: Intro",
+        test: "Trigonometry + Acids & Bases Test (30 Marks)",
+        tip: "Roasting vs Calcination differences are direct board questions.",
+        days: [
+          { day: "Monday (Nov 8)", maths: "Ch 9: Previous 5-year board questions timed practice", sci: "Ch 2: Acids & Bases indicators + reaction with metals", sst: "Eco Ch 2: Economic vs Social infrastructure concepts" },
+          { day: "Tuesday (Nov 9)", maths: "Ch 4: Quadratic Equations intro & Factorisation method", sci: "Ch 2: Neutralisation reaction & pH scale significance in daily life", sst: "Geo Ch 1: India Location, Latitudinal/Longitudinal extent" },
+          { day: "Wednesday (Nov 10)", maths: "Ch 4: Quadratic formula & Nature of Roots (Discriminant D)", sci: "Ch 2: Bleaching powder, Baking soda preparation & uses", sst: "Eco Ch 2: Energy & Transport infrastructure in India" },
+          { day: "Thursday (Nov 11)", maths: "Ch 4: Word problems based on speed, distance and age", sci: "Ch 2: Washing Soda, Plaster of Paris (POP) reactions", sst: "Geo Ch 1: Neighboring countries & maritime boundaries" },
+          { day: "Friday (Nov 12)", maths: "Ch 4: Discriminant real and equal roots problems (k values)", sci: "Ch 2: NCERT in-text & back exercises complete", sst: "Eco Ch 2: Communication & Health infrastructure bullet points" },
+          { day: "Saturday (Nov 13)", maths: "Combined Maths Ch 9 & Ch 4 rough copy revision", sci: "Important salt reactions & formulas flashcard recall", sst: "Geo Ch 1: India physical map practice" },
+          { day: "Sunday (Nov 14)", maths: "Maths Ch 4 + Ch 9 test paper", sci: "Acids, Bases & Salts 30-Marks Test", sst: "Full partner oral quiz" }
+        ]
+      },
+      {
+        week: "Week 3",
+        dates: "Nov 15 - Nov 21",
+        badge: "Core Foundations",
+        maths: "Maths Ch 1: Real Numbers + Ch 2: Polynomials (Fundamental theorems & zeroes)",
+        science: "Sci Ch 1: Chemical Reactions & Equations (Balancing & Types of reactions)",
+        sst: "Part-II Hist Ch 2 & 3: Guru Nanak Dev Ji & Teachings | Part-II Civ Ch 1: Constitution",
+        test: "Maths Ch 1-2 + Chemical Reactions Test (30 Marks)",
+        tip: "Balance at least 15 chemical equations by hand on rough paper.",
+        days: [
+          { day: "Monday (Nov 15)", maths: "Ch 1: Fundamental Theorem of Arithmetic & HCF/LCM", sci: "Ch 1: Writing & balancing chemical equations", sst: "Hist Ch 2: Early life of Guru Nanak Dev Ji & Udasis" },
+          { day: "Tuesday (Nov 16)", maths: "Ch 1: Proof of irrationality (√2, √3, √5 is irrational)", sci: "Ch 1: Combination and Decomposition reactions", sst: "Civics Ch 1: Preamble & Features of Indian Constitution" },
+          { day: "Wednesday (Nov 17)", maths: "Ch 2: Geometrical meaning of zeroes of a polynomial", sci: "Ch 1: Displacement & Double Displacement reactions", sst: "Hist Ch 3: Guru Nanak Dev Ji's Teachings (Kirat Karo, Naam Japo)" },
+          { day: "Thursday (Nov 18)", maths: "Ch 2: Relationship between zeroes and coefficients", sci: "Ch 1: Oxidation, Reduction, Redox & Rancidity", sst: "Civics Ch 1: Fundamental Rights and Duties" },
+          { day: "Friday (Nov 19)", maths: "Ch 2: Quadratic polynomials with given sum and product", sci: "Ch 1: NCERT Exercise 1.1 to 1.3 balancing questions", sst: "Hist Ch 2-3: 4-mark board points revision" },
+          { day: "Saturday (Nov 20)", maths: "Ch 1 & Ch 2 mixed NCERT exemplar problems", sci: "Ch 1: Color changes in reactions (FeSO4, CuSO4)", sst: "Civics Ch 1: Constitution short questions notes" },
+          { day: "Sunday (Nov 21)", maths: "Maths Ch 1 & 2 Test (25 Marks)", sci: "Science Ch 1 Balancing & Types Test", sst: "History & Civics quick writing test" }
+        ]
+      },
+      {
+        week: "Week 4",
+        dates: "Nov 22 - Nov 28",
+        badge: "High Yield Slot",
+        maths: "Maths Ch 3: Pair of Linear Equations in Two Variables (Graphical & Elimination)",
+        science: "Sci Ch 5/6: Life Processes (Nutrition, Photosynthesis & Respiration)",
+        sst: "Part-I Eco Ch 3: Agricultural & Industrial Dev | Part-I Geo Ch 2: Land & Soils",
+        test: "Linear Equations Graph + Life Processes (30 Marks)",
+        tip: "Draw and label digestive system diagrams cleanly.",
+        days: [
+          { day: "Monday (Nov 22)", maths: "Ch 3: Graphical method of solution (Intersecting, Parallel, Coincident)", sci: "Ch 5: Autotrophic nutrition & Photosynthesis steps", sst: "Eco Ch 3: Role of agriculture in Indian economy" },
+          { day: "Tuesday (Nov 23)", maths: "Ch 3: Substitution Method solving", sci: "Ch 5: Heterotrophic nutrition & Human Alimentary Canal", sst: "Geo Ch 2: Major soil types of India (Alluvial, Black, Red)" },
+          { day: "Wednesday (Nov 24)", maths: "Ch 3: Elimination Method solving with speed", sci: "Ch 5: Respiration in Humans (Aerobic vs Anaerobic)", sst: "Eco Ch 3: Green Revolution & modern agricultural practices" },
+          { day: "Thursday (Nov 25)", maths: "Ch 3: Conditions for consistency (a1/a2, b1/b2, c1/c2)", sci: "Ch 5: Human respiratory system diagram & gas exchange", sst: "Geo Ch 2: Soil erosion and conservation techniques" },
+          { day: "Friday (Nov 26)", maths: "Ch 3: Word problems on digits, upstream/downstream", sci: "Ch 5: Breakdown of Glucose pathways chart memorization", sst: "Eco Ch 3: Industrial development & Cottage industries" },
+          { day: "Saturday (Nov 27)", maths: "Ch 3: Graph paper practice on linear equations", sci: "Digestive system diagram neat pencil labeling", sst: "Geo Ch 2: India Soils map practice" },
+          { day: "Sunday (Nov 28)", maths: "Linear Equations Graph & Problem Test", sci: "Life Processes (Nutrition & Respiration) 30 Marks", sst: "Partner weekly check-in" }
+        ]
+      },
+      {
+        week: "Week 5",
+        dates: "Nov 29 - Dec 5",
+        badge: "Scoring Topics",
+        maths: "Maths Ch 5: Arithmetic Progressions (AP - nth term an = a + (n-1)d & sum Sn)",
+        science: "Sci Ch 5/6: Life Processes (Transportation & Excretion, Heart & Nephron)",
+        sst: "Part-II Hist Ch 4: Contribution of Sikh Gurus | Part-I Geo Ch 3: Climate",
+        test: "AP Formulae + Heart/Kidney Diagrams Test (30 Marks)",
+        tip: "Nephron diagram and double circulation question is repeated every 2 years.",
+        days: [
+          { day: "Monday (Nov 29)", maths: "Ch 5: AP introduction, first term (a) & common difference (d)", sci: "Ch 5: Transportation in humans (Heart structure & Blood vessels)", sst: "Hist Ch 4: Guru Angad Dev Ji to Guru Arjan Dev Ji contributions" },
+          { day: "Tuesday (Nov 30)", maths: "Ch 5: nth term formula: an = a + (n - 1)d questions", sci: "Ch 5: Double circulation of blood & Lymph", sst: "Geo Ch 3: Factors affecting India's climate (Monsoon mechanism)" },
+          { day: "Wednesday (Dec 1)", maths: "Ch 5: Sum of n terms: Sn = n/2[2a + (n-1)d]", sci: "Ch 5: Transportation in plants (Xylem vs Phloem)", sst: "Hist Ch 4: Compilation of Adi Granth Sahib & Martyrdom of Guru Arjan Dev Ji" },
+          { day: "Thursday (Dec 2)", maths: "Ch 5: Word problems involving daily life AP series", sci: "Ch 5: Excretion in humans & Structure of Nephron", sst: "Geo Ch 3: Seasons of India (Winter, Summer, Monsoon)" },
+          { day: "Friday (Dec 3)", maths: "Ch 5: NCERT Ex 5.3 tough last questions", sci: "Ch 5: Artificial kidney (Hemodialysis) & Plant excretion", sst: "Hist Ch 4: Guru Hargobind Ji & Miri-Piri concept" },
+          { day: "Saturday (Dec 4)", maths: "Ch 5: AP quick revision & formula card audit", sci: "Human Heart & Nephron diagram 3 times drawing", sst: "Geo Ch 3: Rainfall distribution map of India" },
+          { day: "Sunday (Dec 5)", maths: "Maths Ch 5 AP 30-Marks Test", sci: "Life Processes Full Unit Test", sst: "SST 4-marks points speed test" }
+        ]
+      },
+      {
+        week: "Week 6",
+        dates: "Dec 6 - Dec 12",
+        badge: "Compulsory Proofs",
+        maths: "Maths Ch 6: Triangles (BPT Proof + Similar Triangles Criteria)",
+        science: "Sci Ch 6/7: Control and Coordination (Nervous System, Brain & Hormones)",
+        sst: "Part-II Civ Ch 2: Central Government (President & PM) | Part-I Eco Ch 4: Planning",
+        test: "BPT Theorem Proof (Compulsory 6 Marks)",
+        tip: "Write Thales Theorem (BPT) 5 times by hand without looking.",
+        days: [
+          { day: "Monday (Dec 6)", maths: "Ch 6: Thales Theorem (Basic Proportionality Theorem) Proof writing", sci: "Ch 6: Structure of Neuron & Reflex Arc", sst: "Civics Ch 2: Powers & Functions of the President of India" },
+          { day: "Tuesday (Dec 7)", maths: "Ch 6: Converse of BPT and applications", sci: "Ch 6: Human Brain parts (Forebrain, Midbrain, Hindbrain)", sst: "Eco Ch 4: Objectives of Economic Planning in India" },
+          { day: "Wednesday (Dec 8)", maths: "Ch 6: Criteria for similarity (AAA, SSS, SAS)", sci: "Ch 6: Plant hormones (Auxins, Gibberellins, Cytokinins, Abscisic acid)", sst: "Civics Ch 2: Prime Minister & Cabinet role in governance" },
+          { day: "Thursday (Dec 9)", maths: "Ch 6: NCERT Ex 6.2 & 6.3 important questions", sci: "Ch 6: Tropic movements in plants (Phototropism, Geotropism)", sst: "Eco Ch 4: NITI Aayog & Five-year plans overview" },
+          { day: "Friday (Dec 10)", maths: "Ch 6: Tough triangle similarity proofs", sci: "Ch 6: Endocrine glands & Animal hormones (Thyroid, Adrenaline, Insulin)", sst: "Civics Ch 2: Lok Sabha vs Rajya Sabha powers" },
+          { day: "Saturday (Dec 11)", maths: "BPT Proof written 5 times on blank paper without looking", sci: "Neuron and Brain diagrams practice", sst: "Eco & Civics short question notes" },
+          { day: "Sunday (Dec 12)", maths: "BPT & Triangles 6-Mark Board Style Test", sci: "Control and Coordination 30 Marks", sst: "Partner review & presentation check" }
+        ]
+      },
+      {
+        week: "Week 7",
+        dates: "Dec 13 - Dec 19",
+        badge: "Physics & Geometry",
+        maths: "Maths Ch 7: Coordinate Geometry (Distance & Section Formula)",
+        science: "Sci Ch 9/10: Light (Reflection, Refraction, Mirror/Lens & Ray Diagrams)",
+        sst: "Part-II Hist Ch 5: Guru Gobind Singh Ji (Khalsa) | Part-I Geo Ch 4: Vegetation",
+        test: "Coordinate Formula + Light Ray Diagrams Test (30 Marks)",
+        tip: "Always use scale and sharp pencil for concave/convex mirror ray diagrams.",
+        days: [
+          { day: "Monday (Dec 13)", maths: "Ch 7: Distance formula: d = √[(x2 - x1)² + (y2 - y1)²]", sci: "Ch 9: Reflection laws & Concave mirror ray diagrams (6 cases)", sst: "Hist Ch 5: Battles of Guru Gobind Singh Ji (Pre-Khalsa & Post-Khalsa)" },
+          { day: "Tuesday (Dec 14)", maths: "Ch 7: Distance formula applications (Collinear, Types of Triangles)", sci: "Ch 9: Convex mirror ray diagrams & Mirror formula: 1/f = 1/v + 1/u", sst: "Geo Ch 4: Natural vegetation types in India (Tropical, Deciduous, Thorn)" },
+          { day: "Wednesday (Dec 15)", maths: "Ch 7: Section Formula for internal division", sci: "Ch 9: Magnification formula & mirror numericals solving", sst: "Hist Ch 5: Creation of the Khalsa in 1699 (Significance & 5 Kakkars)" },
+          { day: "Thursday (Dec 16)", maths: "Ch 7: Midpoint formula & points of trisection", sci: "Ch 9: Refraction of light, Snell's law & Refractive Index", sst: "Geo Ch 4: Wildlife conservation & National Parks of India" },
+          { day: "Friday (Dec 17)", maths: "Ch 7: NCERT Ex 7.2 board-level questions", sci: "Ch 9: Convex & Concave lens ray diagrams and Lens formula", sst: "Hist Ch 5: Martyrdom of Chaar Sahibzade" },
+          { day: "Saturday (Dec 18)", maths: "Coordinate geometry mixed practice", sci: "All 8 Light ray diagrams with pencil and scale", sst: "Geo Ch 4: Forest types map of India" },
+          { day: "Sunday (Dec 19)", maths: "Coordinate Geometry Test", sci: "Light Ray Diagrams & Numericals Test", sst: "History Sikh Guru timeline test" }
+        ]
+      },
+      {
+        week: "Week 8",
+        dates: "Dec 20 - Dec 26",
+        badge: "Final Physics Push",
+        maths: "Maths Ch 10: Circles + Ch 11/12: Areas Related to Circles",
+        science: "Sci Ch 10/11: Human Eye & Colourful World (Myopia, Hypermetropia, Prism)",
+        sst: "Part-II Hist Ch 6 & 7: Banda Bahadur & Ranjit Singh | Part-I Geo Ch 5: Minerals",
+        test: "Circles Tangent Proofs + Human Eye Diagram Test (30 Marks)",
+        tip: "Myopia and Hypermetropia correction ray diagrams are guaranteed marks.",
+        days: [
+          { day: "Monday (Dec 20)", maths: "Ch 10: Tangent properties & Theorem 10.1", sci: "Ch 10: Human eye structure and power of accommodation", sst: "Hist Ch 6: Banda Singh Bahadur's conquests & Martyrdom" },
+          { day: "Tuesday (Dec 21)", maths: "Ch 10: Theorem 10.2 (Lengths of tangents from external point are equal)", sci: "Ch 10: Myopia (Nearsightedness) causes and ray diagram correction", sst: "Geo Ch 5: Iron ore, Coal and Petroleum distribution" },
+          { day: "Wednesday (Dec 22)", maths: "Ch 10: NCERT Ex 10.2 compulsory board proofs", sci: "Ch 10: Hypermetropia & Presbyopia causes and corrections", sst: "Hist Ch 7: Rise of Maharaja Ranjit Singh & conquest of Lahore" },
+          { day: "Thursday (Dec 23)", maths: "Ch 11: Sector and Segment of a circle area formulas", sci: "Ch 10: Refraction through glass prism & Dispersion of white light", sst: "Geo Ch 5: Non-conventional energy sources (Solar, Wind)" },
+          { day: "Friday (Dec 24)", maths: "Ch 11: Clock hands and shaded region problems", sci: "Ch 10: Atmospheric refraction (Twinkling of stars) & Tyndall effect", sst: "Hist Ch 7: Civil and Military administration of Ranjit Singh" },
+          { day: "Saturday (Dec 25)", maths: "Circle theorems revision and formula notebook check", sci: "Human eye diagram & Defect correction diagrams practice", sst: "Geo Ch 5: Mineral belts map work" },
+          { day: "Sunday (Dec 26)", maths: "Circles & Areas Test", sci: "Human Eye & Colourful World Test", sst: "Weekly Partner Sync" }
+        ]
+      },
+      {
+        week: "Week 9",
+        dates: "Dec 27 - Dec 31",
+        badge: "Phase 1 Finale",
+        maths: "Maths Ch 12/13: Surface Areas & Volumes + Statistics",
+        science: "Sci Ch 11/12: Electricity (Ohm's law, Series-Parallel, Joule Heating)",
+        sst: "Part-II Hist Ch 8: Freedom Struggle | Part-I Geo Complete Map Work",
+        test: "Full Electricity Numericals + Map Test (30 Marks)",
+        tip: "Congratulations! Phase 1 Syllabus Sprint complete. January is for PYQs!",
+        days: [
+          { day: "Monday (Dec 27)", maths: "Ch 12: Combination of solids surface areas (Cylinder, Cone, Hemisphere)", sci: "Ch 11: Electric current, potential difference (V) & Ohm's Law (V = IR)", sst: "Hist Ch 8: Jallianwala Bagh massacre & Ghadar Movement" },
+          { day: "Tuesday (Dec 28)", maths: "Ch 12: Volume of combination of solids", sci: "Ch 11: Factors affecting resistance (Resistivity ρ) & Series combinations", sst: "Hist Ch 8: Bhagat Singh, Lala Lajpat Rai & Punjab's role in freedom" },
+          { day: "Wednesday (Dec 29)", maths: "Ch 13: Statistics: Mean (Direct & Assumed mean method)", sci: "Ch 11: Parallel resistor combinations & equivalent resistance numericals", sst: "Geo: Complete India and Punjab rivers, dams & cities map master" },
+          { day: "Thursday (Dec 30)", maths: "Ch 13: Mode and Median of grouped data", sci: "Ch 11: Heating effect of current (H = I²Rt) & Electric power (P = VI = I²R)", sst: "SST 100% full syllabus rapid flashcard review" },
+          { day: "Friday (Dec 31)", maths: "Formula audit of all 14 Maths chapters", sci: "Electricity mixed numericals problem sheet", sst: "Final Phase 1 Audit: Celebratory review with study partner!" },
+          { day: "Saturday (Jan 1)", maths: "New Year Goal: Enter Phase 2 PYQs with 100% confidence", sci: "Science formula sheet binding", sst: "SST timeline chart hanging on study wall" },
+          { day: "Sunday (Jan 2)", maths: "Full Board Specimen Paper 1 (3 Hours)", sci: "Full Board Specimen Paper 1 (3 Hours)", sst: "3-Hour Mock Writing analysis" }
+        ]
+      }
+    ];
+
+    // --- APPLICATION STATE (PERSISTED IN LOCALSTORAGE) ---
+    const STORAGE_KEY_AUDIT = "sp_audit_class10";
+    const STORAGE_KEY_WEEKS = "sp_weeks_class10";
+    const STORAGE_KEY_NOTES = "sp_notes_class10";
+    const STORAGE_KEY_THEME = "sp_theme_class10";
+    const STORAGE_KEY_BOARD = "sp_board_class10";
+    const STORAGE_KEY_CHAPTERS = "sp_chapters_class10";
+    const STORAGE_KEY_STUDY_LOGS = "sp_studylogs_class10";
+    const STORAGE_KEY_ALARMS = "sp_alarms_class10";
+
+    let currentBoard = "pseb"; // 'pseb' or 'bseb'
+    let chapterChecks = {};
+    let studyLogs = [];
+    let routineAlarms = [
+      { id: "alm_1", time: "05:00", label: "Wake Up & Cold Wash", enabled: true },
+      { id: "alm_2", time: "05:25", label: "Morning Active Recall Slot", enabled: true },
+      { id: "alm_3", time: "07:15", label: "School Departure", enabled: true },
+      { id: "alm_4", time: "16:00", label: "Maths Core Slot (4-6 PM)", enabled: true },
+      { id: "alm_5", time: "18:30", label: "Science Core Slot (6:30-8:15 PM)", enabled: true },
+      { id: "alm_6", time: "21:00", label: "SST & Languages Night Slot", enabled: true },
+      { id: "alm_7", time: "22:30", label: "Bed Time (Deep Sleep)", enabled: true }
+    ];
+
+    let auditState = {
+      subah: false,
+      maths: false,
+      science: false,
+      sst: false,
+      sleep: false
+    };
+
+    let completedWeeks = {};
+    let quickTimerSeconds = 25 * 60;
+    let quickTimerInterval = null;
+    let isQuickTimerRunning = false;
+
+    // Custom Timer State
+    let customTimerTotalSeconds = 45 * 60;
+    let customTimerRemaining = 45 * 60;
+    let customTimerInterval = null;
+    let isCustomTimerRunning = false;
+    let audioCtx = null;
+    let lastAlarmTriggeredMinute = "";
+
+    // --- BOOKS AND CHAPTERS DIRECTORY (OFFICIAL PSEB & BSEB) ---
+    const boardBooksData = {
+      pseb: [
+        {
+          subject: "Mathematics (ਗਣਿਤ - 10)",
+          badge: "80 Theory + 20 INA",
+          color: "sky",
+          bookName: "PSEB NCERT Aligned Class 10 Ganit",
+          chapters: [
+            "Ch 1: Real Numbers (ਵਾਸਤਵਿਕ ਸੰਖਿਆਵਾਂ)",
+            "Ch 2: Polynomials (ਬਹੁਪਦ)",
+            "Ch 3: Pair of Linear Equations in Two Variables",
+            "Ch 4: Quadratic Equations (ਦੋ ਘਾਤੀ ਸਮੀਕਰਣ)",
+            "Ch 5: Arithmetic Progressions (AP)",
+            "Ch 6: Triangles (BPT Proof 6 Marks)",
+            "Ch 7: Coordinate Geometry (ਨਿਰਦੇਸ਼ ਅੰਕ ਜਮਾਇਤੀ)",
+            "Ch 8: Introduction to Trigonometry (ਤ੍ਰਿਕੋਣਮਿਤੀ)",
+            "Ch 9: Some Applications of Trig (Heights & Distances)",
+            "Ch 10: Circles (ਚੱਕਰ - Tangent Proof)",
+            "Ch 11: Areas Related to Circles",
+            "Ch 12: Surface Areas and Volumes",
+            "Ch 13: Statistics (ਸੰਖਿਆ ਵਿਗਿਆਨ - Mean, Median, Mode)",
+            "Ch 14: Probability (ਸੰਭਾਵਨਾ)"
+          ]
+        },
+        {
+          subject: "Science (ਵਿਗਿਆਨ - 10)",
+          badge: "80 Theory + 20 INA",
+          color: "emerald",
+          bookName: "PSEB Class 10 Vigyan (Physics, Chem, Bio)",
+          chapters: [
+            "Ch 1: Chemical Reactions & Equations (ਕੈਮੀਕਲ ਕਿਰਿਆਵਾਂ)",
+            "Ch 2: Acids, Bases & Salts (ਤੇਜ਼ਾਬ, ਖ਼ਾਰ ਅਤੇ ਲੂਣ)",
+            "Ch 3: Metals & Non-Metals (ਧਾਤਾਂ ਅਤੇ ਅਧਾਤਾਂ - Top Sync)",
+            "Ch 4: Carbon & Its Compounds (ਕਾਰਬਨ ਅਤੇ ਇਸਦੇ ਯੌਗਿਕ)",
+            "Ch 5: Life Processes (ਜੈਵ ਪ੍ਰਕਰਮ - Nutrition & Respiration)",
+            "Ch 6: Control & Coordination (ਕੰਟਰੋਲ ਅਤੇ ਤਾਲਮੇਲ)",
+            "Ch 7: How do Organisms Reproduce (ਜੀਵ ਪ੍ਰਜਣਨ ਕਿਵੇਂ ਕਰਦੇ ਹਨ)",
+            "Ch 8: Heredity (ਅਨੁਵੰਸ਼ਿਕਤਾ)",
+            "Ch 9: Light - Reflection & Refraction (ਪ੍ਰਕਾਸ਼ - ਪਰਵਰਤਨ)",
+            "Ch 10: Human Eye & Colourful World (ਮਨੁੱਖੀ ਅੱਖ)",
+            "Ch 11: Electricity (ਬਿਜਲੀ - Ohm's Law)",
+            "Ch 12: Magnetic Effects of Current (ਬਿਜਲਈ ਧਾਰਾ ਦੇ ਚੁੰਬਕੀ ਪ੍ਰਭਾਵ)",
+            "Ch 13: Our Environment (ਸਾਡਾ ਵਾਤਾਵਰਣ)"
+          ]
+        },
+        {
+          subject: "Social Studies Part-1 (ਭੂਗੋਲ ਅਤੇ ਅਰਥ ਸ਼ਾਸਤਰ)",
+          badge: "Part-1 Syllabus",
+          color: "amber",
+          bookName: "PSEB SST Part 1: Geography & Economics",
+          chapters: [
+            "Geo Ch 1: India: An Introduction (ਭਾਰਤ: ਇੱਕ ਜਾਣ-ਪਛਾਣ)",
+            "Geo Ch 2: Land & Soils (ਧਰਾਤਲ ਅਤੇ ਮਿੱਟੀਆਂ)",
+            "Geo Ch 3: Climate (ਜਲਵਾਯੂ)",
+            "Geo Ch 4: Natural Vegetation & Wildlife (ਕੁਦਰਤੀ ਬਨਸਪਤੀ)",
+            "Geo Ch 5: Minerals & Power Resources (ਖਣਿਜ ਅਤੇ ਸ਼ਕਤੀ ਸਾਧਨ)",
+            "Geo Ch 6: Population (ਜਨਸੰਖਿਆ)",
+            "Eco Ch 1: Basic Concepts (ਮੁੱਢਲੀਆਂ ਧਾਰਨਾਵਾਂ - Frontloaded)",
+            "Eco Ch 2: Infrastructure of Indian Economy (ਭਾਰਤੀ ਅਰਥ-ਵਿਵਸਥਾ ਦਾ ਆਧਾਰ)",
+            "Eco Ch 3: Agricultural & Industrial Dev. (ਖੇਤੀਬਾੜੀ ਅਤੇ ਉਦਯੋਗਿਕ ਵਿਕਾਸ)",
+            "Eco Ch 4: Economic Planning in India (ਆਰਥਿਕ ਨਿਯੋਜਨ)"
+          ]
+        },
+        {
+          subject: "Social Studies Part-2 (ਇਤਿਹਾਸ ਅਤੇ ਨਾਗਰਿਕ ਸ਼ਾਸਤਰ)",
+          badge: "Part-2 Syllabus",
+          color: "amber",
+          bookName: "PSEB SST Part 2: History & Civics",
+          chapters: [
+            "Hist Ch 1: Physical Features of Punjab (ਪੰਜਾਬ ਦੀਆਂ ਭੂਗੋਲਿਕ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ)",
+            "Hist Ch 2: Guru Nanak Dev Ji and His Teachings",
+            "Hist Ch 3: Guru Nanak Dev Ji's Successors",
+            "Hist Ch 4: Contribution of Sikh Gurus (Guru Angad to Tegh Bahadur)",
+            "Hist Ch 5: Guru Gobind Singh Ji & Creation of Khalsa (ਖ਼ਾਲਸਾ ਦੀ ਸਾਜਨਾ)",
+            "Hist Ch 6: Banda Singh Bahadur and Sikh Misals",
+            "Hist Ch 7: Maharaja Ranjit Singh: Achievements & Administration",
+            "Hist Ch 8: Punjab in Freedom Struggle (ਅਜ਼ਾਦੀ ਦੀ ਲਹਿਰ)",
+            "Civics Ch 1: Features of Indian Constitution (ਸੰਵਿਧਾਨ ਦੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ)",
+            "Civics Ch 2: Central Government (President & Prime Minister)",
+            "Civics Ch 3: State Government (ਗਵਰਨਰ ਅਤੇ ਮੁੱਖ ਮੰਤਰੀ)",
+            "Civics Ch 4: Indian Democracy at Work & Foreign Policy"
+          ]
+        },
+        {
+          subject: "Punjabi (ਪੰਜਾਬੀ ਏ ਅਤੇ ਬੀ - ਸਾਹਿਤ ਮਾਲਾ, ਵੰਗੀ, ਵਿਆਕਰਨ)",
+          badge: "65+10 / 65+10",
+          color: "purple",
+          bookName: "PSEB Sahit Mala, Vangi & Vyakaran",
+          chapters: [
+            "ਸਾਹਿਤ ਮਾਲਾ (ਕਵਿਤਾ): ਗੁਰੂ ਨਾਨਕ ਦੇਵ ਜੀ, ਅਮਰਦਾਸ ਜੀ, ਅਰਜਨ ਦੇਵ ਜੀ, ਭਾਈ ਗੁਰਦਾਸ ਜੀ",
+            "ਸਾਹਿਤ ਮਾਲਾ (ਵਾਰਤਕ): ਰਬਾਬ ਮੰਗਾਉਣ ਦਾ ਬਿਰਤਾਂਤ, ਘਰ ਦਾ ਪਿਆਰ, ਬੋਲੀ, ਪ੍ਰਾਰਥਨਾ",
+            "ਵੰਗੀ (ਕਹਾਣੀਆਂ): ਕੁਲਫ਼ੀ (ਸੁਜਾਨ ਸਿੰਘ), ਮੜ੍ਹੀਆਂ ਤੋਂ ਦੂਰ, ਅੰਗ-ਸੰਗ, ਧਰਤੀ ਹੇਠਲਾ ਬਲਦ",
+            "ਵੰਗੀ (ਇਕਾਂਗੀ): ਬੰਬ ਕੇਸ (ਬਲਵੰਤ ਗਾਰਗੀ), ਨਾਇਕ, ਦੂਜਾ ਵਿਆਹ",
+            "ਨਾਵਲ: ਇਕ ਹੋਰ ਨਵਾਂ ਸਾਲ (ਨਿਰੰਜਨ ਤਸਨੀਮ - ਬੰਤਾ, ਦਿਆਲੋ, ਤਾਰੋ)",
+            "ਵਿਆਕਰਨ: ਨਾਂਵ, ਪੜਨਾਂਵ, ਵਿਸ਼ੇਸ਼ਣ, ਕਿਰਿਆ, ਕਾਲ, ਸ਼ਬਦ-ਜੋੜ, ਸ਼ੁੱਧ-ਅਸ਼ੁੱਧ",
+            "ਮੁਹਾਵਰੇ ਅਤੇ ਅਖਾਣ (Zero marks deduction if correct)",
+            "ਪੱਤਰ-ਵਿਹਾਰ: ਸਰਪੰਚ, ਥਾਣਾ ਮੁਖੀ, ਬੈਂਕ ਮੈਨੇਜਰ, ਦੋਸਤ ਨੂੰ ਪੱਤਰ"
+          ]
+        },
+        {
+          subject: "English (Main Course, Supplementary & Grammar)",
+          badge: "80 Theory + 20 INA",
+          color: "rose",
+          bookName: "PSEB English Main Course Book & Supplementary Reader",
+          chapters: [
+            "MCB L-1: The Happy Prince",
+            "MCB L-2: Where is Science Taking Us?",
+            "MCB L-3: Secret of Happiness",
+            "MCB L-4: A Gift for Christmas",
+            "MCB L-5: Ancient Indian Thought & Practices",
+            "MCB L-6: The Home-Coming | L-7: Making of Earth",
+            "Poems: Character of a Happy Man, Death the Leveller, Razia the Tigress",
+            "Supplementary L-1: Bed Number - 29",
+            "Supplementary L-2: Half A Rupee Worth",
+            "Supplementary L-3: One Thousand Dollars",
+            "Supplementary L-4: The Dying Detective",
+            "Supplementary L-5: How Much Land Does a Man Need",
+            "Supplementary L-6: Return to Air",
+            "Grammar: Determiners, Prepositions, Modals, Voice, Reported Speech",
+            "Writing: Translation (Eng-Punjabi/Hindi), Notice, Letter, Paragraph"
+          ]
+        }
+      ],
+      bseb: [
+        {
+          subject: "Mathematics (गणित - 10)",
+          badge: "100 Marks (50 MCQ + 50 Subj)",
+          color: "sky",
+          bookName: "BSEB NCERT Aligned Class 10 Ganit",
+          chapters: [
+            "Ch 1: वास्तविक संख्याएं (Real Numbers - 10 Marks)",
+            "Ch 2: बहुपद (Polynomials)",
+            "Ch 3: दो चर वाले रैखिक समीकरण युग्म (Linear Equations)",
+            "Ch 4: द्विघात समीकरण (Quadratic Equations)",
+            "Ch 5: समांतर श्रेढ़ी (Arithmetic Progressions - AP)",
+            "Ch 6: त्रिभुज (Triangles - प्रमेय 6.1 BPT और समरूपता)",
+            "Ch 7: निर्देशांक ज्यामिति (Coordinate Geometry)",
+            "Ch 8: त्रिकोणमिति का परिचय (Trigonometry 20 Marks)",
+            "Ch 9: त्रिकोणमिति के कुछ अनुप्रयोग (ऊंचाई और दूरी)",
+            "Ch 10: वृत्त (Circles - स्पर्श रेखाएं)",
+            "Ch 11: रचनाएं (Constructions - 5 Marks Compulsory)",
+            "Ch 12: वृत्तों से संबंधित क्षेत्रफल",
+            "Ch 13: पृष्ठीय क्षेत्रफल और आयतन",
+            "Ch 14: सांख्यिकी (Statistics - माध्य, माध्यक, बहुलक)",
+            "Ch 15: प्रायिकता (Probability)"
+          ]
+        },
+        {
+          subject: "Science (विज्ञान - भौतिकी, रसायन, जीवविज्ञान)",
+          badge: "80 Theory + 20 Practical",
+          color: "emerald",
+          bookName: "BSEB Class 10 Vigyan (Physics, Chem, Bio)",
+          chapters: [
+            "रसायन: Ch 1 रासायनिक अभिक्रियाएं एवं समीकरण",
+            "रसायन: Ch 2 अम्ल, क्षारक एवं लवण (pH मान एवं लवण)",
+            "रसायन: Ch 3 धातु एवं अधातु (Reactivity Series & Roasting/Calcination)",
+            "रसायन: Ch 4 कार्बन एवं उसके यौगिक (Hydrocarbons)",
+            "रसायन: Ch 5 तत्वों का आवर्त वर्गीकरण (Mendeleev & Modern)",
+            "जीवविज्ञान: Ch 6 जैव प्रक्रम (पोषण, श्वसन, वहन, उत्सर्जन)",
+            "जीवविज्ञान: Ch 7 नियंत्रण एवं समन्वय (मस्तिष्क व हॉर्मोन)",
+            "जीवविज्ञान: Ch 8 जीव जनन कैसे करते हैं",
+            "जीवविज्ञान: Ch 9 आनुवंशिकता एवं जैव विकास",
+            "भौतिकी: Ch 10 प्रकाश - परावर्तन तथा अपवर्तन (Ray Diagrams)",
+            "भौतिकी: Ch 11 मानव नेत्र तथा रंगबिरंगा संसार",
+            "भौतिकी: Ch 12 विद्युत (ओम का नियम एवं श्रेणी/समानांतर क्रम)",
+            "भौतिकी: Ch 13 विद्युत धारा के चुंबकीय प्रभाव",
+            "पर्यावरण: Ch 14 ऊर्जा के स्रोत | Ch 15 हमारा पर्यावरण"
+          ]
+        },
+        {
+          subject: "Social Science (सामाजिक विज्ञान - 5 भाग)",
+          badge: "80 Theory + 20 Internal",
+          color: "amber",
+          bookName: "BSEB इतिहास, भूगोल, राजनीति, अर्थशास्त्र एवं आपदा प्रबंधन",
+          chapters: [
+            "इतिहास: यूरोप में राष्ट्रवाद का उदय",
+            "इतिहास: समाजवाद एवं साम्यवाद",
+            "इतिहास: हिन्द-चीन में राष्ट्रवादी आंदोलन",
+            "इतिहास: भारत में राष्ट्रवाद (असहयोग, सविनय अवज्ञा आंदोलन)",
+            "भूगोल: भारत - संसाधन एवं उपयोग (कृषि, वन, जल, खनिज)",
+            "भूगोल: खनिज एवं ऊर्जा संसाधन | निर्माण उद्योग",
+            "भूगोल: मानचित्र अध्ययन एवं बिहार का भूगोल",
+            "राजनीति विज्ञान: लोकतंत्र में द्वंद्व एवं सत्ता की साझेदारी",
+            "राजनीति विज्ञान: लोकतंत्र की उपलब्धियां एवं चुनौतियां",
+            "अर्थशास्त्र: विकास की समझ एवं राष्ट्रीय आय",
+            "अर्थशास्त्र: मुद्रा, बचत एवं साख | हमारी वित्तीय संस्थाएं",
+            "अर्थशास्त्र: रोजगार एवं सेवाएं | वैश्वीकरण | उपभोक्ता अधिकार",
+            "आपदा प्रबंधन: प्राकृतिक आपदा (बाढ़, सुखाड़, भूकंप, सुनामी) एवं जीवन रक्षक उपाय"
+          ]
+        },
+        {
+          subject: "Hindi (हिंदी - गोधूलि भाग 2 एवं वर्णिका भाग 2)",
+          badge: "100 Marks Paper",
+          color: "purple",
+          bookName: "BSEB गोधूलि भाग 2, वर्णिका भाग 2 एवं हिंदी व्याकरण",
+          chapters: [
+            "गोधूलि गद्य: 1. श्रम विभाजन और जाति प्रथा (डॉ. भीमराव अम्बेडकर)",
+            "गोधूलि गद्य: 2. विष के दांत (नलिन विलोचन शर्मा)",
+            "गोधूलि गद्य: 3. भारत से हम क्या सीखें (मैक्समूलर)",
+            "गोधूलि गद्य: 4. नाखून क्यों बढ़ते हैं | 5. नागरी लिपि",
+            "गोधूलि गद्य: 6. बहादुर (अमरकांत) | 7. परंपरा का मूल्यांकन",
+            "गोधूलि पद्य: राम नाम बिनु बिरथे जगि जनमा (गुरु नानक)",
+            "गोधूलि पद्य: प्रेम अयनि श्री राधिका (रसखान) | स्वदेशी (प्रेमघन)",
+            "गोधूलि पद्य: भारतमाता (सुमित्रानंदन पंत) | जनतंत्र का जन्म (दिनकर)",
+            "वर्णिका: 1. मगम्मा (दही वाली मगम्मा) | 2. ढहते विश्वास",
+            "वर्णिका: 3. मां (ईश्वर पेटलीकर) | 4. नगर | 5. धरती कब तक घूमेगी",
+            "व्याकरण: संज्ञा, सर्वनाम, विशेषण, कारक, संधि, समास, उपसर्ग-प्रत्यय",
+            "रचना: निबंध लेखन, पत्र/संवाद लेखन, अपठित गद्यांश (20 अंक)"
+          ]
+        },
+        {
+          subject: "English (Panorama Part 2 & English Grammar)",
+          badge: "100 Marks Paper",
+          color: "rose",
+          bookName: "BSEB Panorama Part 2 (Prose & Poetry) & Reader",
+          chapters: [
+            "Prose: 1. The Pace for Living (R.C. Hutchinson)",
+            "Prose: 2. Me and the Ecology Bit (John Lexau)",
+            "Prose: 3. Gillu (Mahadevi Verma)",
+            "Prose: 4. What is Wrong with Indian Films (Satyajit Ray)",
+            "Prose: 5. Acceptance Speech (Aung San Suu Kyi)",
+            "Prose: 6. Once Upon a Time (Toni Morrison)",
+            "Poetry: God Made the Country | Ode on Solitude | Polythene Bag",
+            "Poetry: Thinner Than a Crescent | The Empty Heart | Koel",
+            "Supplementary: 1. January Night | 2. A Bet | 3. Quality | 4. Sun and Moon",
+            "Grammar: Tenses, Active/Passive Voice, Direct & Indirect Speech",
+            "Composition: Paragraph Writing, Notice, Letter/Application, Translation"
+          ]
+        },
+        {
+          subject: "Sanskrit / Non-Hindi / Urdu (संस्कृत - पीयूषम भाग 2)",
+          badge: "100 Marks Paper",
+          color: "indigo",
+          bookName: "BSEB संस्कृत (पीयूषम भाग 2) / Urdu (दरक्षां)",
+          chapters: [
+            "पीयूषम: 1. मङ्गलम् (उपनिषद्)",
+            "पीयूषम: 2. पाटलिपुत्रवैभवम् (पटना का इतिहास)",
+            "पीयूषम: 3. अलसकथा (विद्यापति)",
+            "पीयूषम: 4. संस्कृतसाहित्ये लेखिकाः",
+            "पीयूषम: 5. भारतमहिमा | 6. भारतीयसंस्काराः",
+            "पीयूषम: 7. नीतिश्लोकाः (विदुर नीति)",
+            "पीयूषम: 8. कर्मवीरकथा | 9. स्वामी दयानन्दः",
+            "पीयूषम: 10. मन्दाकिनीवर्णनम् (वाल्मीकि रामायण)",
+            "पीयूषम: 11. व्याघ्रपथिककथा | 12. कर्णस्य दानवीरता",
+            "संस्कृत व्याकरण: सन्धि, समास, कारक-विभक्ति, धातु रूप, शब्द रूप, अनुवाद"
+          ]
+        }
+      ]
+    };
+
+    // --- INITIALIZATION ---
+    window.addEventListener("DOMContentLoaded", () => {
+      loadTheme();
+      loadSavedState();
+      renderRoutineTable();
+      renderWeeksSchedule();
+      renderSubjectBooks();
+      renderAlarmsList();
+      renderStudyLogs();
+      updateAuditUI();
+      detectActiveSlot();
+      calculateBoardCountdown();
+      updateDateIndicator();
+      setInterval(detectActiveSlot, 30000); // Check current slot every 30s
+      setInterval(checkRoutineAlarms, 10000); // Check routine alarms every 10s
+    });
+
+    function updateDateIndicator() {
+      const el = document.getElementById("currentDateIndicator");
+      if (el) {
+        el.textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' });
+      }
+    }
+
+    // --- SYNTHESIZED ALARM SOUND (WEB AUDIO API - ZERO EXTERNAL URL DEPENDENCY) ---
+    function playAlarmBeep(durationMs = 2500) {
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = "sine";
+        // Frequency beeps
+        osc.frequency.setValueAtTime(880, now); // A5
+        osc.frequency.setValueAtTime(1174.66, now + 0.2); // D6
+        osc.frequency.setValueAtTime(880, now + 0.4);
+        osc.frequency.setValueAtTime(1174.66, now + 0.6);
+        osc.frequency.setValueAtTime(1479.98, now + 0.8);
+
+        // Volume pulsing
+        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + (durationMs / 1000));
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(now);
+        osc.stop(now + (durationMs / 1000));
+      } catch (e) {
+        console.warn("Audio Context error:", e);
+      }
+    }
+
+    function testAlarmSound() {
+      playAlarmBeep(1800);
+      showNotificationMessage("🔔 Testing Alarm Sound! Synthesizer working.");
+    }
+
+    // --- CHECK ALARMS SYSTEM ---
+    function checkRoutineAlarms() {
+      const now = new Date();
+      const currentH = now.getHours().toString().padStart(2, '0');
+      const currentM = now.getMinutes().toString().padStart(2, '0');
+      const timeStr = `${currentH}:${currentM}`;
+
+      if (lastAlarmTriggeredMinute === timeStr) return; // Prevent double trigger in same minute
+
+      routineAlarms.forEach(alm => {
+        if (alm.enabled && alm.time === timeStr) {
+          lastAlarmTriggeredMinute = timeStr;
+          playAlarmBeep(4000);
+          showNotificationMessage(`⏰ ALARM: ${alm.label} (${alm.time})! Time to switch focus.`);
+        }
+      });
+    }
+
+    function renderAlarmsList() {
+      const container = document.getElementById("alarmsListContainer");
+      if (!container) return;
+
+      container.innerHTML = routineAlarms.map((alm, idx) => {
+        return `
+          <div class="flex items-center justify-between p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 text-xs">
+            <div class="flex items-center gap-2.5">
+              <span class="font-mono font-bold text-sm text-sky-600 dark:text-sky-400 bg-white dark:bg-slate-900 px-2 py-0.5 rounded-lg border border-slate-200 dark:border-slate-800">
+                ${alm.time}
+              </span>
+              <span class="font-semibold text-slate-800 dark:text-slate-200">${alm.label}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" onchange="toggleAlarmEnabled(${idx})" ${alm.enabled ? 'checked' : ''} class="sr-only peer">
+                <div class="w-8 h-4 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-emerald-500"></div>
+              </label>
+              ${idx >= 7 ? `
+                <button onclick="removeAlarm(${idx})" class="text-slate-400 hover:text-rose-500 p-1">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleAlarmEnabled(idx) {
+      routineAlarms[idx].enabled = !routineAlarms[idx].enabled;
+      saveAlarms();
+      renderAlarmsList();
+    }
+
+    function addCustomAlarm() {
+      const timeInput = document.getElementById("newAlarmTime");
+      const labelInput = document.getElementById("newAlarmLabel");
+      const timeVal = timeInput.value;
+      const labelVal = labelInput.value.trim() || "Study Target Alarm";
+
+      if (!timeVal) {
+        showNotificationMessage("Please choose an alarm time first!");
+        return;
+      }
+
+      routineAlarms.push({
+        id: "alm_" + Date.now(),
+        time: timeVal,
+        label: labelVal,
+        enabled: true
+      });
+
+      saveAlarms();
+      renderAlarmsList();
+      timeInput.value = "";
+      labelInput.value = "";
+      showNotificationMessage(`Alarm added for ${timeVal}!`);
+    }
+
+    function removeAlarm(idx) {
+      routineAlarms.splice(idx, 1);
+      saveAlarms();
+      renderAlarmsList();
+    }
+
+    function saveAlarms() {
+      localStorage.setItem(STORAGE_KEY_ALARMS, JSON.stringify(routineAlarms));
+    }
+
+    // --- CUSTOM TIMER CONTROLS ---
+    function setCustomPreset(minutes) {
+      clearInterval(customTimerInterval);
+      isCustomTimerRunning = false;
+      customTimerTotalSeconds = minutes * 60;
+      customTimerRemaining = customTimerTotalSeconds;
+      updateCustomTimerDisplay();
+      updateCustomTimerButton(false);
+      document.getElementById("customTimerStatusTag").textContent = `Preset ${minutes}m`;
+      document.getElementById("customInputHours").value = Math.floor(minutes / 60);
+      document.getElementById("customInputMins").value = minutes % 60;
+    }
+
+    function applyCustomDurationInput() {
+      const hrs = parseInt(document.getElementById("customInputHours").value) || 0;
+      const mins = parseInt(document.getElementById("customInputMins").value) || 0;
+      const totalSec = (hrs * 3600) + (mins * 60);
+
+      if (totalSec <= 0) {
+        showNotificationMessage("Minimum 1 minute zaroori hai!");
+        return;
+      }
+
+      clearInterval(customTimerInterval);
+      isCustomTimerRunning = false;
+      customTimerTotalSeconds = totalSec;
+      customTimerRemaining = totalSec;
+      updateCustomTimerDisplay();
+      updateCustomTimerButton(false);
+      document.getElementById("customTimerStatusTag").textContent = `Custom ${hrs}h ${mins}m`;
+      showNotificationMessage(`Timer set to ${hrs > 0 ? hrs + ' hour(s) ' : ''}${mins} minute(s)!`);
+    }
+
+    function toggleCustomTimer() {
+      if (isCustomTimerRunning) {
+        clearInterval(customTimerInterval);
+        isCustomTimerRunning = false;
+        updateCustomTimerButton(false);
+        document.getElementById("customTimerStatusTag").textContent = "Paused";
+      } else {
+        isCustomTimerRunning = true;
+        updateCustomTimerButton(true);
+        document.getElementById("customTimerStatusTag").textContent = "Running";
+
+        customTimerInterval = setInterval(() => {
+          if (customTimerRemaining > 0) {
+            customTimerRemaining--;
+            updateCustomTimerDisplay();
+          } else {
+            clearInterval(customTimerInterval);
+            isCustomTimerRunning = false;
+            updateCustomTimerButton(false);
+            document.getElementById("customTimerStatusTag").textContent = "Finished!";
+            playAlarmBeep(3500);
+            showNotificationMessage("⏰ Deep Focus Session Complete! Bahut badhiya.");
+          }
+        }, 1000);
+      }
+    }
+
+    function resetCustomTimer() {
+      clearInterval(customTimerInterval);
+      isCustomTimerRunning = false;
+      customTimerRemaining = customTimerTotalSeconds;
+      updateCustomTimerDisplay();
+      updateCustomTimerButton(false);
+      document.getElementById("customTimerStatusTag").textContent = "Idle";
+    }
+
+    function updateCustomTimerDisplay() {
+      const h = Math.floor(customTimerRemaining / 3600);
+      const m = Math.floor((customTimerRemaining % 3600) / 60);
+      const s = customTimerRemaining % 60;
+
+      const display = document.getElementById("customTimerBigDisplay");
+      if (!display) return;
+
+      if (h > 0) {
+        display.textContent = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+      } else {
+        display.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+      }
+    }
+
+    function updateCustomTimerButton(running) {
+      const btn = document.getElementById("customTimerMainBtn");
+      if (!btn) return;
+      if (running) {
+        btn.innerHTML = `<i class="fa-solid fa-pause"></i> Pause Timer`;
+        btn.className = "flex-1 py-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2";
+      } else {
+        btn.innerHTML = `<i class="fa-solid fa-play"></i> Start Timer`;
+        btn.className = "flex-1 py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2";
+      }
+    }
+
+    // --- DAILY STUDY LOGGER & SUBMIT SYSTEM ---
+    function handleDailySubmit(e) {
+      e.preventDefault();
+      const hours = parseFloat(document.getElementById("logStudyHours").value) || 0;
+      const questions = parseInt(document.getElementById("logQuestionsCount").value) || 0;
+      const subject = document.getElementById("logPrimarySubject").value;
+      const notes = document.getElementById("logNotes").value.trim() || "All scheduled slot targets finished.";
+
+      const todayStr = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+      const timestamp = Date.now();
+
+      // Check if entry for today already exists
+      const existingIdx = studyLogs.findIndex(l => l.date === todayStr);
+      if (existingIdx !== -1) {
+        studyLogs[existingIdx] = { date: todayStr, hours, questions, subject, notes, timestamp };
+      } else {
+        studyLogs.unshift({ date: todayStr, hours, questions, subject, notes, timestamp });
+      }
+
+      saveStudyLogs();
+      renderStudyLogs();
+
+      // Reset fields
+      document.getElementById("logStudyHours").value = "";
+      document.getElementById("logQuestionsCount").value = "";
+      document.getElementById("logNotes").value = "";
+
+      showNotificationMessage(`Aaj ka study log (${hours}h, ${questions} Qs) successfully save ho gaya!`);
+    }
+
+    function renderStudyLogs() {
+      const container = document.getElementById("studyLogsHistoryContainer");
+      if (!container) return;
+
+      updateStreakDisplay();
+
+      if (studyLogs.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 bg-slate-50 dark:bg-slate-900/40 rounded-2xl border border-slate-200 dark:border-slate-800 text-slate-500 text-xs">
+            <i class="fa-solid fa-calendar-plus text-2xl text-slate-300 dark:text-slate-700 mb-2 block"></i>
+            Abhi koi daily entry nahi hai. Upar form bhar ke aaj ka pehla report submit karein!
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = studyLogs.map(log => {
+        return `
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm space-y-2">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="font-heading font-bold text-slate-900 dark:text-white text-sm sm:text-base">
+                  ${log.date}
+                </span>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-semibold">
+                  ${log.subject}
+                </span>
+              </div>
+              <div class="flex items-center gap-3 text-xs">
+                <span class="font-bold text-emerald-600 dark:text-emerald-400">
+                  <i class="fa-regular fa-clock mr-1"></i> ${log.hours} Hours
+                </span>
+                <span class="font-bold text-indigo-600 dark:text-indigo-400">
+                  <i class="fa-solid fa-pencil mr-1"></i> ${log.questions} Questions
+                </span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 pt-1 leading-relaxed">
+              <strong>Notes:</strong> ${escapeHTML(log.notes)}
+            </p>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateStreakDisplay() {
+      const streakEl = document.getElementById("streakDisplay");
+      if (!streakEl) return;
+      const count = studyLogs.length;
+      streakEl.textContent = `${count} Day${count === 1 ? '' : 's'} Logged`;
+    }
+
+    function clearStudyHistory() {
+      studyLogs = [];
+      saveStudyLogs();
+      renderStudyLogs();
+      showNotificationMessage("Study history cleared!");
+    }
+
+    function saveStudyLogs() {
+      localStorage.setItem(STORAGE_KEY_STUDY_LOGS, JSON.stringify(studyLogs));
+    }
+
+    // --- PERSISTENCE LOAD HELPERS ---
+    function loadSavedState() {
+      // Audit
+      const savedAudit = localStorage.getItem(STORAGE_KEY_AUDIT);
+      if (savedAudit) {
+        try { auditState = JSON.parse(savedAudit); } catch (e) {}
+      }
+
+      // Weeks
+      const savedWeeks = localStorage.getItem(STORAGE_KEY_WEEKS);
+      if (savedWeeks) {
+        try { completedWeeks = JSON.parse(savedWeeks); } catch (e) {}
+      }
+
+      // Notes
+      const savedNotes = localStorage.getItem(STORAGE_KEY_NOTES);
+      const notesArea = document.getElementById("partnerNotesArea");
+      if (notesArea && savedNotes) {
+        notesArea.value = savedNotes;
+      }
+
+      // Board
+      const savedBoard = localStorage.getItem(STORAGE_KEY_BOARD);
+      if (savedBoard && (savedBoard === "pseb" || savedBoard === "bseb")) {
+        currentBoard = savedBoard;
+        const psebBtn = document.getElementById("boardBtn-pseb");
+        const bsebBtn = document.getElementById("boardBtn-bseb");
+        if (psebBtn && bsebBtn) {
+          if (currentBoard === "pseb") {
+            psebBtn.className = "px-2.5 py-1 rounded-lg bg-sky-600 text-white shadow-sm transition";
+            bsebBtn.className = "px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition";
+          } else {
+            bsebBtn.className = "px-2.5 py-1 rounded-lg bg-sky-600 text-white shadow-sm transition";
+            psebBtn.className = "px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition";
+          }
+        }
+      }
+
+      // Chapters Checkboxes
+      const savedChapters = localStorage.getItem(STORAGE_KEY_CHAPTERS);
+      if (savedChapters) {
+        try { chapterChecks = JSON.parse(savedChapters); } catch (e) {}
+      }
+
+      // Alarms
+      const savedAlarms = localStorage.getItem(STORAGE_KEY_ALARMS);
+      if (savedAlarms) {
+        try { routineAlarms = JSON.parse(savedAlarms); } catch (e) {}
+      }
+
+      // Study Logs
+      const savedLogs = localStorage.getItem(STORAGE_KEY_STUDY_LOGS);
+      if (savedLogs) {
+        try { studyLogs = JSON.parse(savedLogs); } catch (e) {}
+      }
+    }
+
+    // --- DARK MODE / THEME SUPPORT ---
+    function loadTheme() {
+      const saved = localStorage.getItem(STORAGE_KEY_THEME);
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        updateThemeIcon(true);
+      } else {
+        document.documentElement.classList.remove('dark');
+        updateThemeIcon(false);
+      }
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem(STORAGE_KEY_THEME, isDark ? 'dark' : 'light');
+      updateThemeIcon(isDark);
+    }
+
+    function updateThemeIcon(isDark) {
+      const icon = document.getElementById("themeIcon");
+      if (icon) {
+        icon.className = isDark ? "fa-solid fa-sun text-amber-400" : "fa-solid fa-moon text-slate-600";
+      }
+    }
+
+    // Calculate days left until mid February board exams
+    function calculateBoardCountdown() {
+      const now = new Date();
+      // Target board exam date: Feb 15
+      let targetYear = now.getFullYear();
+      if (now.getMonth() > 1) { // If past Feb
+        targetYear += 1;
+      }
+      const boardDate = new Date(targetYear, 1, 15); // Feb 15
+      const diffTime = boardDate - now;
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      const countdownEl = document.getElementById("boardDaysCountdown");
+      if (countdownEl) {
+        countdownEl.textContent = `${Math.max(0, diffDays)} Days Left`;
+      }
+    }
+
+    // Switch Phases in Schedule
+    function switchPhase(phaseId) {
+      ['phase1', 'phase2', 'phase3'].forEach(p => {
+        const btn = document.getElementById(`phaseBtn-${p}`);
+        const content = document.getElementById(`phaseContent-${p}`);
+        if (p === phaseId) {
+          btn.className = "phase-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold bg-white dark:bg-slate-900 text-sky-600 shadow-sm transition";
+          content.classList.remove('hidden');
+        } else {
+          btn.className = "phase-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 transition";
+          content.classList.add('hidden');
+        }
+      });
+    }
+
+    // Navigation Tabs Switcher
+    function switchTab(tabId) {
+      const tabs = ["dashboard", "routine", "schedule", "books", "timerHub", "dailyLogger", "blueprint", "partner", "aiMentor"];
+      tabs.forEach(id => {
+        const el = document.getElementById(`tab-${id}`);
+        const btn = document.getElementById(`tabBtn-${id}`);
+        if (el && btn) {
+          if (id === tabId) {
+            el.classList.remove("hidden");
+            btn.className = "tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-sky-600 bg-sky-50 dark:bg-sky-950/50 dark:text-sky-400 font-semibold";
+          } else {
+            el.classList.add("hidden");
+            btn.className = "tab-btn px-3 py-1.5 rounded-lg flex items-center gap-2 whitespace-nowrap text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white";
+          }
+        }
+      });
+    }
+
+    // --- AUDIT TRACKER LOGIC ---
+    function toggleAudit(key) {
+      auditState[key] = !auditState[key];
+      localStorage.setItem(STORAGE_KEY_AUDIT, JSON.stringify(auditState));
+      updateAuditUI();
+    }
+
+    function resetAuditTracker() {
+      auditState = { subah: false, maths: false, science: false, sst: false, sleep: false };
+      localStorage.setItem(STORAGE_KEY_AUDIT, JSON.stringify(auditState));
+      updateAuditUI();
+    }
+
+    function updateAuditUI() {
+      let count = 0;
+      for (const key in auditState) {
+        const chk = document.getElementById(`audit-${key}`);
+        if (chk) chk.checked = !!auditState[key];
+        if (auditState[key]) count++;
+      }
+
+      const percent = Math.round((count / 5) * 100);
+      const dashBar = document.getElementById("dashAuditBar");
+      const dashCount = document.getElementById("dashAuditCount");
+      const dashPercent = document.getElementById("dashAuditPercent");
+      const scoreBadge = document.getElementById("auditScoreBadge");
+
+      if (dashBar) dashBar.style.width = `${percent}%`;
+      if (dashPercent) dashPercent.textContent = `${percent}%`;
+      if (dashCount) dashCount.textContent = `${count} of 5 Habits Completed`;
+      if (scoreBadge) scoreBadge.textContent = `${count} / 5 Completed`;
+    }
+
+    // --- RENDER 24-HOUR ROUTINE TABLE ---
+    function renderRoutineTable() {
+      const tbody = document.getElementById("routineTableBody");
+      if (!tbody) return;
+
+      tbody.innerHTML = routineSlots.map((slot, index) => {
+        return `
+          <tr id="routineRow-${index}" class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 font-mono font-semibold text-sky-700 dark:text-sky-400 whitespace-nowrap">
+              ${slot.time}
+            </td>
+            <td class="py-3 px-4 font-medium text-slate-900 dark:text-white">
+              ${slot.subject}
+            </td>
+            <td class="py-3 px-4 text-slate-600 dark:text-slate-300">
+              ${slot.target}
+            </td>
+            <td class="py-3 px-4 text-center">
+              <span id="slotStatusBadge-${index}" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">
+                Upcoming
+              </span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // --- DETECT ACTIVE TIME SLOT ---
+    function detectActiveSlot() {
+      const now = new Date();
+      const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+      let activeIndex = -1;
+      let activeName = "Free Buffer";
+
+      routineSlots.forEach((slot, idx) => {
+        const [sH, sM] = slot.start.split(":").map(Number);
+        const [eH, eM] = slot.end.split(":").map(Number);
+        const startM = sH * 60 + sM;
+        const endM = eH * 60 + eM;
+
+        let isInSlot = false;
+        if (startM <= endM) {
+          isInSlot = currentMinutes >= startM && currentMinutes < endM;
+        } else {
+          // Crosses midnight (e.g. 22:30 to 05:00)
+          isInSlot = currentMinutes >= startM || currentMinutes < endM;
+        }
+
+        const badge = document.getElementById(`slotStatusBadge-${idx}`);
+        const row = document.getElementById(`routineRow-${idx}`);
+
+        if (isInSlot) {
+          activeIndex = idx;
+          activeName = slot.subject;
+          if (badge) {
+            badge.textContent = "Active Now";
+            badge.className = "text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 animate-pulse";
+          }
+          if (row) {
+            row.className = "bg-emerald-50/70 dark:bg-emerald-950/40 font-semibold border-l-4 border-emerald-500 transition";
+          }
+        } else {
+          if (badge) {
+            badge.textContent = currentMinutes > endM && startM <= endM ? "Completed" : "Upcoming";
+            badge.className = "text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500";
+          }
+          if (row) {
+            row.className = "hover:bg-slate-50 dark:hover:bg-slate-800/40 transition";
+          }
+        }
+      });
+
+      const slotBadgeText = document.getElementById("currentSlotName");
+      if (slotBadgeText) {
+        slotBadgeText.textContent = activeName;
+      }
+    }
+
+    // --- BOARD SWITCHER (PSEB <-> BSEB) ---
+    function switchBoard(boardName) {
+      currentBoard = boardName;
+      localStorage.setItem(STORAGE_KEY_BOARD, boardName);
+
+      const psebBtn = document.getElementById("boardBtn-pseb");
+      const bsebBtn = document.getElementById("boardBtn-bseb");
+      const booksHeader = document.getElementById("booksHeaderBoardName");
+      const dashBadge = document.getElementById("dashBoardBadge");
+
+      if (psebBtn && bsebBtn) {
+        if (boardName === "pseb") {
+          psebBtn.className = "px-2.5 py-1 rounded-lg bg-sky-600 text-white shadow-sm transition";
+          bsebBtn.className = "px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition";
+          if (booksHeader) booksHeader.textContent = "PSEB (Punjab Board)";
+          if (dashBadge) dashBadge.textContent = "PSEB";
+        } else {
+          bsebBtn.className = "px-2.5 py-1 rounded-lg bg-sky-600 text-white shadow-sm transition";
+          psebBtn.className = "px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition";
+          if (booksHeader) booksHeader.textContent = "BSEB (Bihar Board)";
+          if (dashBadge) dashBadge.textContent = "BSEB";
+        }
+      }
+
+      renderSubjectBooks();
+      renderSubjectMicroBars();
+      showNotificationMessage(`Switched to ${boardName.toUpperCase()} syllabus mode!`);
+    }
+
+    // --- RENDER OFFICIAL SUBJECT BOOKS & CHAPTERS ---
+    function renderSubjectBooks() {
+      const container = document.getElementById("subjectCardsContainer");
+      if (!container) return;
+
+      const subjects = boardBooksData[currentBoard] || boardBooksData["pseb"];
+
+      container.innerHTML = subjects.map((sub, sIdx) => {
+        let doneInSubject = 0;
+        const totalChapters = sub.chapters.length;
+
+        const chaptersHtml = sub.chapters.map((ch, cIdx) => {
+          const chKey = `${currentBoard}_s${sIdx}_c${cIdx}`;
+          const isChecked = !!chapterChecks[chKey];
+          if (isChecked) doneInSubject++;
+
+          return `
+            <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/60 cursor-pointer select-none transition text-xs">
+              <input type="checkbox" onchange="toggleChapterCheck('${chKey}')" ${isChecked ? 'checked' : ''} class="w-4 h-4 mt-0.5 rounded text-sky-600 focus:ring-sky-500">
+              <span class="${isChecked ? 'line-through text-slate-400 dark:text-slate-500' : 'text-slate-700 dark:text-slate-300'} font-medium">
+                ${ch}
+              </span>
+            </label>
+          `;
+        }).join('');
+
+        const percent = Math.round((doneInSubject / totalChapters) * 100);
+
+        return `
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+              <div>
+                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 uppercase">
+                  ${sub.badge}
+                </span>
+                <h3 class="font-heading font-bold text-slate-900 dark:text-white text-base mt-1.5">${sub.subject}</h3>
+                <span class="text-xs text-slate-500 block">${sub.bookName}</span>
+              </div>
+              <div class="text-right">
+                <div class="font-heading font-extrabold text-base text-sky-600 dark:text-sky-400">${percent}%</div>
+                <span class="text-[11px] text-slate-400 font-medium">${doneInSubject}/${totalChapters} Done</span>
+              </div>
+            </div>
+
+            <!-- Subject Progress Bar -->
+            <div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-sky-500 to-indigo-600 h-full transition-all duration-300" style="width: ${percent}%"></div>
+            </div>
+
+            <div class="max-h-64 overflow-y-auto space-y-1 pr-1 divide-y divide-slate-100 dark:divide-slate-800/40">
+              ${chaptersHtml}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      updateChapterBadgeCount();
+      renderSubjectMicroBars();
+    }
+
+    function toggleChapterCheck(key) {
+      chapterChecks[key] = !chapterChecks[key];
+      localStorage.setItem(STORAGE_KEY_CHAPTERS, JSON.stringify(chapterChecks));
+      renderSubjectBooks();
+    }
+
+    function updateChapterBadgeCount() {
+      let done = 0;
+      for (const k in chapterChecks) {
+        if (chapterChecks[k]) done++;
+      }
+      const badge = document.getElementById("chapterProgressBadge");
+      if (badge) badge.textContent = `${done} Chapters Completed`;
+    }
+
+    // --- SUBJECT MICRO BARS & PREDICTOR WIDGET ---
+    function renderSubjectMicroBars() {
+      const container = document.getElementById("subjectMicroBarsContainer");
+      if (!container) return;
+
+      const subjects = boardBooksData[currentBoard] || boardBooksData["pseb"];
+      let totalCompletedAll = 0;
+      let totalChaptersAll = 0;
+
+      const html = subjects.map((sub, sIdx) => {
+        let done = 0;
+        const total = sub.chapters.length;
+        totalChaptersAll += total;
+
+        sub.chapters.forEach((_, cIdx) => {
+          const chKey = `${currentBoard}_s${sIdx}_c${cIdx}`;
+          if (chapterChecks[chKey]) {
+            done++;
+            totalCompletedAll++;
+          }
+        });
+
+        const pct = Math.round((done / total) * 100);
+        const shortName = sub.subject.split(" ")[0];
+
+        return `
+          <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-800 text-center space-y-1">
+            <span class="text-[11px] font-bold text-slate-700 dark:text-slate-300 block truncate">${shortName}</span>
+            <div class="text-sm font-extrabold font-heading text-sky-600 dark:text-sky-400">${pct}%</div>
+            <div class="w-full bg-slate-200 dark:bg-slate-700 h-1 rounded-full overflow-hidden">
+              <div class="bg-sky-500 h-full" style="width: ${pct}%"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = html;
+
+      // Calculate Predicted Score (Formula: base 60% + chapter completion * 30% + audit completion * 10%)
+      const chPercent = totalChaptersAll > 0 ? (totalCompletedAll / totalChaptersAll) : 0;
+      let auditCount = 0;
+      for (const k in auditState) { if (auditState[k]) auditCount++; }
+      const auditPercent = auditCount / 5;
+
+      const predictedPct = (65 + (chPercent * 28) + (auditPercent * 7)).toFixed(1);
+      const scoreBadge = document.getElementById("predictedScoreBadge");
+      if (scoreBadge) {
+        scoreBadge.textContent = `Projected: ${predictedPct}% (${predictedPct >= 90 ? 'Topper 90%+' : 'Targeting 90%'})`;
+      }
+    }
+
+    // --- ANULOM-VILOM MEDITATION BELL ---
+    function startMeditationBell() {
+      playAlarmBeep(1200);
+      showNotificationMessage("🧘 10-Minute Breathing Activated: Inhale 4s, Hold 4s, Exhale 6s. Mind completely calm!");
+    }
+
+    // --- RENDER 9-WEEK SCHEDULE CARDS (WITH DAILY BREAKDOWNS MON-SUN) ---
+    function renderWeeksSchedule() {
+      const container = document.getElementById("weeksScheduleContainer");
+      if (!container) return;
+
+      container.innerHTML = nineWeekSyllabus.map((item, idx) => {
+        const isDone = !!completedWeeks[idx];
+        const daysHtml = (item.days || []).map(d => {
+          return `
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-800 text-xs space-y-1">
+              <span class="font-bold text-sky-700 dark:text-sky-300 block border-b border-slate-200 dark:border-slate-800 pb-1">${d.day}</span>
+              <div class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Maths:</strong> ${d.maths}</div>
+              <div class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Science:</strong> ${d.sci}</div>
+              <div class="text-slate-700 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">SST/Lang:</strong> ${d.sst}</div>
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="bg-white dark:bg-slate-900 border ${isDone ? 'border-emerald-500/70 bg-emerald-50/20' : 'border-slate-200 dark:border-slate-800'} rounded-2xl p-5 shadow-sm space-y-3 transition">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="font-heading font-extrabold text-slate-900 dark:text-white text-base sm:text-lg">
+                  ${item.week}
+                </span>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300">
+                  ${item.dates}
+                </span>
+                <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 uppercase">
+                  ${item.badge}
+                </span>
+              </div>
+              <div class="flex items-center gap-3">
+                <button onclick="toggleWeekDaysAccordion(${idx})" class="text-xs font-bold text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1">
+                  <i class="fa-solid fa-calendar-days"></i> <span id="weekDaysToggleText-${idx}">View Mon-Sun Days</span>
+                </button>
+                <label class="flex items-center gap-2 text-xs font-semibold cursor-pointer select-none">
+                  <input type="checkbox" onchange="toggleWeekDone(${idx})" ${isDone ? 'checked' : ''} class="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500">
+                  <span class="${isDone ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-500'}">Mark Week Done</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm">
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
+                <span class="text-xs font-bold text-sky-600 dark:text-sky-400 block mb-1">📐 Maths (4:00 - 6:00 PM):</span>
+                <p class="text-slate-700 dark:text-slate-300">${item.maths}</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
+                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 block mb-1">⚗️ Science (6:30 - 8:15 PM):</span>
+                <p class="text-slate-700 dark:text-slate-300">${item.science}</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
+                <span class="text-xs font-bold text-amber-600 dark:text-amber-400 block mb-1">🌍 SST (9:00 - 10:15 PM):</span>
+                <p class="text-slate-700 dark:text-slate-300">${item.sst}</p>
+              </div>
+            </div>
+
+            <!-- COLLAPSIBLE DAY-BY-DAY SCHEDULE -->
+            <div id="weekDaysContainer-${idx}" class="hidden pt-3 border-t border-slate-100 dark:border-slate-800/80 space-y-2">
+              <div class="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5 mb-1">
+                <i class="fa-regular fa-calendar-check text-sky-500"></i> Daily Mon to Sun Step-by-Step Study Guide:
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                ${daysHtml}
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2 text-xs border-t border-slate-100 dark:border-slate-800/80">
+              <div class="text-indigo-600 dark:text-indigo-400 font-medium">
+                <strong>Sunday Test:</strong> ${item.test}
+              </div>
+              <div class="text-slate-500 dark:text-slate-400 italic">
+                <i class="fa-solid fa-lightbulb text-amber-400 mr-1"></i> ${item.tip}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      updateWeekCountBadge();
+    }
+
+    function toggleWeekDaysAccordion(idx) {
+      const el = document.getElementById(`weekDaysContainer-${idx}`);
+      const txt = document.getElementById(`weekDaysToggleText-${idx}`);
+      if (!el) return;
+      const isHidden = el.classList.contains("hidden");
+      if (isHidden) {
+        el.classList.remove("hidden");
+        if (txt) txt.textContent = "Hide Days";
+      } else {
+        el.classList.add("hidden");
+        if (txt) txt.textContent = "View Mon-Sun Days";
+      }
+    }
+
+    function toggleWeekDone(idx) {
+      completedWeeks[idx] = !completedWeeks[idx];
+      localStorage.setItem(STORAGE_KEY_WEEKS, JSON.stringify(completedWeeks));
+      renderWeeksSchedule();
+    }
+
+    function updateWeekCountBadge() {
+      let count = 0;
+      for (const k in completedWeeks) {
+        if (completedWeeks[k]) count++;
+      }
+      const badge = document.getElementById("weeksCompletedCount");
+      if (badge) badge.textContent = `${count} / 9 Weeks Completed`;
+    }
+
+    // --- QUICK FOCUS STOPWATCH ---
+    function toggleQuickTimer() {
+      const btn = document.getElementById("quickTimerStartBtn");
+      if (isQuickTimerRunning) {
+        clearInterval(quickTimerInterval);
+        isQuickTimerRunning = false;
+        btn.textContent = "Start";
+        btn.className = "flex-1 text-xs py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 font-semibold transition";
+      } else {
+        isQuickTimerRunning = true;
+        btn.textContent = "Pause";
+        btn.className = "flex-1 text-xs py-1.5 bg-amber-600 text-white rounded-lg hover:bg-amber-700 font-semibold transition";
+        quickTimerInterval = setInterval(() => {
+          if (quickTimerSeconds > 0) {
+            quickTimerSeconds--;
+            updateTimerDisplay();
+          } else {
+            clearInterval(quickTimerInterval);
+            isQuickTimerRunning = false;
+            btn.textContent = "Start";
+            showNotificationMessage("Focus session finished! Time to take a fresh air break.");
+          }
+        }, 1000);
+      }
+    }
+
+    function resetQuickTimer() {
+      clearInterval(quickTimerInterval);
+      isQuickTimerRunning = false;
+      quickTimerSeconds = 25 * 60;
+      updateTimerDisplay();
+      const btn = document.getElementById("quickTimerStartBtn");
+      if (btn) {
+        btn.textContent = "Start";
+        btn.className = "flex-1 text-xs py-1.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 font-semibold transition";
+      }
+    }
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(quickTimerSeconds / 60);
+      const secs = quickTimerSeconds % 60;
+      const el = document.getElementById("quickTimerDisplay");
+      if (el) {
+        el.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      }
+    }
+
+    // --- PARTNER NOTES ---
+    function savePartnerNotes() {
+      const text = document.getElementById("partnerNotesArea").value;
+      localStorage.setItem(STORAGE_KEY_NOTES, text);
+      showNotificationMessage("Partner notes saved locally!");
+    }
+
+    // --- WHATSAPP PARTNER MODAL & RECAP BUILDER ---
+    function openWhatsAppModal() {
+      const modal = document.getElementById("whatsAppModal");
+      const textarea = document.getElementById("whatsAppTextPreview");
+
+      let doneCount = 0;
+      const itemsList = [];
+      if (auditState.subah) { doneCount++; itemsList.push("✅ Morning Active Recall + Formulas"); }
+      if (auditState.maths) { doneCount++; itemsList.push("✅ 2h Maths Core (15+ NCERT Questions)"); }
+      if (auditState.science) { doneCount++; itemsList.push("✅ Science Core (Metals/Reactions + Diagram)"); }
+      if (auditState.sst) { doneCount++; itemsList.push("✅ SST/Languages (Bullet points & Map)"); }
+      if (auditState.sleep) { doneCount++; itemsList.push("✅ 10:30 PM Sleep Target (No phone)"); }
+
+      const todayStr = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      const notes = localStorage.getItem(STORAGE_KEY_NOTES) || "All core targets synced with school!";
+
+      const msg = `*🚀 StudyPartner 10th Daily Board Report (${todayStr})*\n` +
+                  `*Target:* 90%+ PSEB Board Synced\n\n` +
+                  `*Daily Audit Status:* ${doneCount}/5 Habits Done\n` +
+                  (itemsList.length > 0 ? itemsList.join("\n") + "\n\n" : "Targets in progress!\n\n") +
+                  `*Notes / Target for Tomorrow:*\n${notes}\n\n` +
+                  `_Dono sath mein 90%+ phodenge! 10:30 PM bed time strictly on._`;
+
+      textarea.value = msg;
+      modal.classList.remove("hidden");
+    }
+
+    function closeWhatsAppModal() {
+      document.getElementById("whatsAppModal").classList.add("hidden");
+      document.getElementById("copySuccessMsg").classList.add("hidden");
+    }
+
+    function copyPartnerReport() {
+      const text = document.getElementById("whatsAppTextPreview").value;
+      const tempArea = document.createElement("textarea");
+      tempArea.value = text;
+      document.body.appendChild(tempArea);
+      tempArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempArea);
+
+      const msg = document.getElementById("copySuccessMsg");
+      msg.classList.remove("hidden");
+    }
+
+    function sendToWhatsAppWeb() {
+      const text = encodeURIComponent(document.getElementById("whatsAppTextPreview").value);
+      window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
+    }
+
+    // --- AI STUDY MENTOR (GEMINI API INTEGRATION) ---
+    async function handleAIChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById("aiUserInput");
+      const userText = input.value.trim();
+      if (!userText) return;
+
+      appendChatMessage("user", userText);
+      input.value = "";
+
+      const btn = document.getElementById("aiSendBtn");
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Mentoring...`;
+
+      // Loading bubble
+      const loadingBubbleId = "loading-" + Date.now();
+      appendLoadingBubble(loadingBubbleId);
+
+      try {
+        const apiKey = ""; // Canvas provides key at runtime
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+        const systemPrompt = `You are the ultimate 'StudyPartner 10th' board exam mentor specifically tailored for Class 10 PSEB board examinations from November through 2027 boards.
+        Your tone is motivating, brotherly/friendly ('Bhai / Dost'), energetic, and highly actionable in Hinglish (Hindi + English).
+        
+        Always follow these syllabus rules based on the user's master schedule:
+        1. Current Priority: Maths Ch 9 (Trigonometry / Heights & Distances: tan 30 = 1/√3, tan 45 = 1, tan 60 = √3), Science Ch 3 (Metals & Non-metals: reactivity series 'Please Stop Calling Me A Careless Zebra Instead Try Learning How Copper Saves Gold', Roasting vs Calcination), SST Economics (Basic concepts: 4 bullet points each).
+        2. Daily Routine: 5:00 AM wake up, active recall morning formulas, 7:15 AM sharp school departure, 4:00-6:00 PM Maths core, 6:30-8:15 PM Science core, 9:00-10:15 PM SST, 10:30 PM compulsory sleep.
+        3. The 90% Formula: 80 Marks Theory + 20 Marks INA. Target 70+/80 in theory papers.
+        4. Give direct, crisp bullet points, exact formulas, definitions or problem steps. Never write long unformatted walls of text. Keep it sharp and encouraging.`;
+
+        const payload = {
+          contents: [{ parts: [{ text: userText }] }],
+          systemInstruction: { parts: [{ text: systemPrompt }] }
+        };
+
+        const response = await fetchWithBackoff(apiUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+        removeLoadingBubble(loadingBubbleId);
+
+        const reply = result?.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf karna dost, abhi connect nahi ho paya. Ek baar phir pucho!";
+        appendChatMessage("ai", reply);
+      } catch (err) {
+        removeLoadingBubble(loadingBubbleId);
+        appendChatMessage("ai", "Kuch network issue aaya dost. Thoda wait karke dobara pucho ya apne notes check karo!");
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `<span>Ask</span> <i class="fa-solid fa-paper-plane text-xs"></i>`;
+      }
+    }
+
+    function sendQuickPrompt(promptText) {
+      document.getElementById("aiUserInput").value = promptText;
+      document.getElementById("aiChatForm").dispatchEvent(new Event("submit"));
+    }
+
+    function appendChatMessage(sender, text) {
+      const history = document.getElementById("aiChatHistory");
+      const div = document.createElement("div");
+      div.className = "flex gap-3 " + (sender === "user" ? "justify-end" : "justify-start");
+
+      if (sender === "user") {
+        div.innerHTML = `
+          <div class="bg-sky-600 text-white rounded-2xl p-3.5 max-w-xl text-xs sm:text-sm shadow-sm">
+            ${escapeHTML(text)}
+          </div>
+          <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center shrink-0 text-xs font-bold">
+            You
+          </div>
+        `;
+      } else {
+        div.innerHTML = `
+          <div class="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center shrink-0 text-xs font-bold">
+            AI
+          </div>
+          <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl p-3.5 max-w-xl text-slate-800 dark:text-slate-200 space-y-1 shadow-sm text-xs sm:text-sm">
+            <span class="font-bold block text-sky-600 dark:text-sky-400">StudyPartner AI</span>
+            <div class="whitespace-pre-line leading-relaxed">${formatMarkdown(text)}</div>
+          </div>
+        `;
+      }
+      history.appendChild(div);
+      history.scrollTop = history.scrollHeight;
+    }
+
+    function appendLoadingBubble(id) {
+      const history = document.getElementById("aiChatHistory");
+      const div = document.createElement("div");
+      div.id = id;
+      div.className = "flex gap-3 justify-start";
+      div.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center shrink-0 text-xs font-bold">
+          AI
+        </div>
+        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl p-3 max-w-xs flex items-center gap-2 text-slate-500 text-xs">
+          <span class="w-2 h-2 rounded-full bg-sky-500 animate-bounce"></span>
+          <span class="w-2 h-2 rounded-full bg-sky-500 animate-bounce [animation-delay:0.2s]"></span>
+          <span class="w-2 h-2 rounded-full bg-sky-500 animate-bounce [animation-delay:0.4s]"></span>
+          <span class="ml-1">Checking Class 10 Syllabus...</span>
+        </div>
+      `;
+      history.appendChild(div);
+      history.scrollTop = history.scrollHeight;
+    }
+
+    function removeLoadingBubble(id) {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    }
+
+    // Exponential Backoff Fetch Utility
+    async function fetchWithBackoff(url, options, maxRetries = 3) {
+      let delay = 1000;
+      for (let i = 0; i < maxRetries; i++) {
+        try {
+          const res = await fetch(url, options);
+          if (res.ok) return res;
+          if (res.status === 429 || res.status >= 500) {
+            await new Promise(r => setTimeout(r, delay));
+            delay *= 2;
+            continue;
+          }
+          return res;
+        } catch (e) {
+          if (i === maxRetries - 1) throw e;
+          await new Promise(r => setTimeout(r, delay));
+          delay *= 2;
+        }
+      }
+      return fetch(url, options);
+    }
+
+    // Helper HTML sanitizer
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+      );
+    }
+
+    // Simple markdown renderer for AI responses
+    function formatMarkdown(text) {
+      let escaped = escapeHTML(text);
+      // bold
+      escaped = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // bullets
+      escaped = escaped.replace(/^\* (.*$)/gim, '• $1');
+      return escaped;
+    }
+
+    // Custom notification box (no alert used)
+    function showNotificationMessage(msg) {
+      const banner = document.createElement("div");
+      banner.className = "fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl text-xs font-semibold flex items-center gap-2 border border-slate-700 animate-fade-in";
+      banner.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400"></i> ${escapeHTML(msg)}`;
+      document.body.appendChild(banner);
+      setTimeout(() => banner.remove(), 3500);
+    }
+  </script>
+</body>
+</html>
